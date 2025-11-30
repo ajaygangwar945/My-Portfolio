@@ -235,10 +235,8 @@ const PositionTimelineItem = ({ position, isLast, isDark }) => (
                 ))}
             </ul>
             {position.detailsLink && (
-                <a
-                    href={position.detailsLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                <Link
+                    to={position.detailsLink}
                     className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all ${isDark
                         ? 'bg-cyan-600 text-white hover:bg-cyan-500'
                         : 'bg-cyan-600 text-white hover:bg-cyan-700'
@@ -246,7 +244,7 @@ const PositionTimelineItem = ({ position, isLast, isDark }) => (
                 >
                     <ExternalLink size={16} />
                     More Details
-                </a>
+                </Link>
             )}
         </div>
     </div>
@@ -627,57 +625,17 @@ const Home = ({ isDark }) => {
                     <SectionTitle title="Positions of Responsibility" subtitle="Leadership & Community Roles" isDark={isDark} />
                     <div className="max-w-3xl mx-auto">
                         <div className="mt-8">
-                            {/* SCC */}
-                            <PositionTimelineItem
-                                position={{
-                                    title: "SCC",
-                                    role: "Member",
-                                    date: "Sep, 2025 – Present",
-                                    detailsLink: "/scc.html",
-                                    responsibilities: [
-                                        "Represented the student body in meetings with faculty and management, effectively communicating academic and non-academic concerns.",
-                                        "Actively contributed to organizing and managing technical events, including coding competitions, workshops, and hackathons, fostering a culture of innovation and technical growth among students.",
-                                        "Coordinated with tech communities on campus to bring industry speakers, hands-on sessions, and technology awareness programs, enhancing peer learning and skill development."
-                                    ]
-                                }}
-                                isLast={false}
-                                isDark={isDark}
-                            />
-
-                            {/* Hostel Committee */}
-                            <PositionTimelineItem
-                                position={{
-                                    title: "Hostel Committee",
-                                    role: "Member",
-                                    date: "Jan, 2024 – Aug, 2024",
-                                    detailsLink: "/hostel-committee.html",
-                                    responsibilities: [
-                                        "Managed student welfare and conflict resolution for a residence of 500+ students, ensuring a safe and supportive living environment.",
-                                        "Acted as a liaison between residents and the administration to resolve maintenance issues and upgrade facility resources.",
-                                        "Organized community-building events and festivals, increasing student engagement and participation."
-                                    ]
-                                }}
-                                isLast={false}
-                                isDark={isDark}
-                            />
-
-                            {/* IGCMUN */}
-                            <PositionTimelineItem
-                                position={{
-                                    title: "IGC MUN",
-                                    role: "Member",
-                                    date: "Jan, 2024 – Apr, 2024",
-                                    detailsLink: "/igcmun.html",
-                                    responsibilities: [
-                                        "Engaged in diplomatic debates and extensive research on global policies to represent assigned portfolios effectively.",
-                                        "Drafted working papers and resolutions while collaborating with diverse teams to reach consensus on complex international issues.",
-                                        "Honed public speaking and negotiation skills through formal committee sessions and caucuses."
-                                    ]
-                                }}
-                                isLast={true}
-                                isDark={isDark}
-                            />
-
+                            {PORTFOLIO_DATA.positions?.map((position, index) => (
+                                <PositionTimelineItem
+                                    key={index}
+                                    position={{
+                                        ...position,
+                                        detailsLink: `/position/${position.id}`
+                                    }}
+                                    isLast={index === PORTFOLIO_DATA.positions.length - 1}
+                                    isDark={isDark}
+                                />
+                            ))}
                         </div>
                     </div>
                 </div>

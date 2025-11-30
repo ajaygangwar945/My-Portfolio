@@ -133,6 +133,73 @@ export const PORTFOLIO_DATA = {
         }
 
     ],
+    positions: [
+        {
+            id: "scc",
+            title: "SCC",
+            role: "Member",
+            date: "Sep, 2025 – Present",
+            description: "Representing the student body and organizing technical events.",
+            responsibilities: [
+                "Represented the student body in meetings with faculty and management, effectively communicating academic and non-academic concerns.",
+                "Actively contributed to organizing and managing technical events, including coding competitions, workshops, and hackathons, fostering a culture of innovation and technical growth among students.",
+                "Coordinated with tech communities on campus to bring industry speakers, hands-on sessions, and technology awareness programs, enhancing peer learning and skill development."
+            ],
+            fullDescription: "As a member of the Student Council Committee (SCC), I play a pivotal role in bridging the gap between students and the administration. My focus has been on enhancing the technical culture on campus by organizing impactful events and workshops.",
+            events: [
+                {
+                    title: "Tech Week 2025",
+                    image: "/events/tech-week.jpg",
+                    description: "Organized a week-long series of coding challenges and tech talks."
+                },
+                {
+                    title: "Hackathon 2025",
+                    image: "/events/hackathon.jpg",
+                    description: "Coordinated the annual university hackathon with over 500 participants."
+                }
+            ]
+        },
+        {
+            id: "hostel-committee",
+            title: "Hostel Committee",
+            role: "Member",
+            date: "Jan, 2024 – Aug, 2024",
+            description: "Managed student welfare and conflict resolution for 500+ students.",
+            responsibilities: [
+                "Managed student welfare and conflict resolution for a residence of 500+ students, ensuring a safe and supportive living environment.",
+                "Acted as a liaison between residents and the administration to resolve maintenance issues and upgrade facility resources.",
+                "Organized community-building events and festivals, increasing student engagement and participation."
+            ],
+            fullDescription: "Serving on the Hostel Committee allowed me to develop strong leadership and conflict resolution skills. I was responsible for the well-being of over 500 students, ensuring a comfortable and engaging living environment.",
+            events: [
+                {
+                    title: "Cultural Night",
+                    image: "/events/cultural-night.jpg",
+                    description: "Organized a cultural night to celebrate diversity in the hostel."
+                }
+            ]
+        },
+        {
+            id: "igcmun",
+            title: "IGC MUN",
+            role: "Member",
+            date: "Jan, 2024 – Apr, 2024",
+            description: "Engaged in diplomatic debates and policy research.",
+            responsibilities: [
+                "Engaged in diplomatic debates and extensive research on global policies to represent assigned portfolios effectively.",
+                "Drafted working papers and resolutions while collaborating with diverse teams to reach consensus on complex international issues.",
+                "Honed public speaking and negotiation skills through formal committee sessions and caucuses."
+            ],
+            fullDescription: "Participating in the IGC Model United Nations was an enriching experience that sharpened my public speaking, negotiation, and research skills. I engaged in intense debates on global issues and collaborated with delegates to draft resolutions.",
+            events: [
+                {
+                    title: "IGC MUN Conference",
+                    image: "/events/mun.jpg",
+                    description: "Represented my portfolio in the annual IGC MUN conference."
+                }
+            ]
+        }
+    ],
 
     blogs: [
         {
