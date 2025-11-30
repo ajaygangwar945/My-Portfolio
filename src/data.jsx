@@ -50,28 +50,28 @@ export const PORTFOLIO_DATA = {
         },
         {
             title: "Pet Adoption & Animal Welfare",
-            description: "A responsive web platform connecting pets with potential owners, promoting animal welfare awareness through interactive galleries and adoption listings.",
+            description: "A responsive platform facilitating pet adoption and welfare awareness through interactive listings",
             tags: ["HTML", "CSS", "JavaScript"],
             github: "https://github.com/ajaygangwar945/Pet-Adoption-and-Animal-Welfare",
             demo: "https://pet-adoption-and-animal-welfare.netlify.app"
         },
         {
             title: "Real-time Weather Forecasting App",
-            description: "A responsive weather dashboard providing real-time data, geolocation support, and animated visualizations using the OpenWeatherMap API.",
+            description: "Responsive weather dashboard featuring real-time data, geolocation, and animated visualizations via OpenWeatherMap.",
             tags: ["React", "JavaScript", "OpenWeatherMap API", "CSS", "HTML 5"],
             github: "https://github.com/ajaygangwar945/Weather-App",
             demo: "https://weather-forcasting-temperature.netlify.app"
         },
         {
             title: "ICD-Mapping",
-            description: "A healthcare interoperability platform facilitating the integration of traditional Ayush systems with global standards through FHIR R4 compliance and ICD-11 dual coding.",
+            description: "FHIR R4 compliant platform integrating Ayush systems with global healthcare standards using ICD-11 dual coding.",
             tags: ["Python", "FastAPI", "React", "Tailwind CSS"],
             github: "https://github.com/ajaygangwar945/ICD-Mapping",
             demo: "https://icd-mapping.onrender.com"
         },
         {
             title: "ATS Resume Score",
-            description: "An AI-powered application leveraging Google Gemini to analyze resumes and provide actionable feedback on job description alignment.",
+            description: "AI-driven application using Google Gemini to analyze resumes and optimize alignment with job descriptions.",
             tags: ["Python", "Streamlit", "Google Gemini API"],
             github: "https://github.com/ajaygangwar945/ATS-Resume-Score",
             demo: "https://ats-resume-score-945.streamlit.app"
@@ -120,17 +120,18 @@ export const PORTFOLIO_DATA = {
     ],
     experience: [
         {
-            role: "Full Stack Developer Intern",
-            company: "Skillcraft Technology",
-            year: "Summer 2025",
-            description: "Developed and maintained web applications using React and Node.js. Improved site performance by 20%."
-        },
-        {
             role: "Open Source Contributor",
             company: "GitHub",
             year: "2024 - Present",
             description: "Contributed to various open source projects including bug fixes and feature additions."
+        },
+        {
+            role: "Full Stack Developer Intern",
+            company: "Skillcraft Technology",
+            year: "Summer 2025",
+            description: "Developed and maintained web applications using React and Node.js. Improved site performance by 20%."
         }
+
     ],
 
     blogs: [
