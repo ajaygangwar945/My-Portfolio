@@ -136,7 +136,7 @@ export const PORTFOLIO_DATA = {
     positions: [
         {
             id: "scc",
-            title: "SCC",
+            title: "Student Career Committee - SCC",
             role: "Member",
             date: "Sep, 2025 – Present",
             description: "Representing the student body and organizing technical events.",
@@ -145,7 +145,7 @@ export const PORTFOLIO_DATA = {
                 "Actively contributed to organizing and managing technical events, including coding competitions, workshops, and hackathons, fostering a culture of innovation and technical growth among students.",
                 "Coordinated with tech communities on campus to bring industry speakers, hands-on sessions, and technology awareness programs, enhancing peer learning and skill development."
             ],
-            fullDescription: "As a member of the Student Council Committee (SCC), I play a pivotal role in bridging the gap between students and the administration. My focus has been on enhancing the technical culture on campus by organizing impactful events and workshops.",
+            fullDescription: "As a member of the Student Career Committee (SCC), I play a pivotal role in bridging the gap between students and the administration. My focus has been on enhancing the technical culture on campus by organizing impactful events and workshops.",
             events: [
                 {
                     title: "Tech Week 2025",
