@@ -1,0 +1,219 @@
+import React from 'react';
+import { Trophy, Cpu, Code } from 'lucide-react';
+
+/* =============================================================================
+  🎨 USER CONTENT CONFIGURATION
+  Edit this section to update your portfolio data without touching the code logic!
+  =============================================================================
+*/
+export const PORTFOLIO_DATA = {
+    personal: {
+        name: "Ajay Gangwar",
+        role: "Computer Science Student & Data Science Enthusiast",
+        about: "I am a passionate CSE undergrad specializing in Data Science, Machine Learning, and Python programming. I enjoy working with real-world datasets, building predictive models, and uncovering insights through analytics. With hands-on experience in data preprocessing, visualization, statistical analysis, and ML algorithms, I love transforming raw data into meaningful solutions and intelligent systems.",
+        email: "ajaygangwar945@gmail.com",
+        github: "https://github.com/ajaygangwar945",
+        linkedin: "https://www.linkedin.com/in/ajaygangwar945/",
+        resumeLink: "/resume.pdf",
+        profileImage: "/profile.jpg"
+    },
+    skills: [
+        "Java", "Python", "C++", "React.js", "Node.js", "MongoDB", "SQL", "Git", "Docker", "AWS"
+    ],
+    stats: [
+        { label: "Projects Completed", value: "15+" },
+        { label: "LeetCode Solved", value: "100+" },
+        { label: "Hackathons Won", value: "2" },
+        { label: "Years Coding", value: "3" }
+    ],
+    projects: [
+        {
+            title: "AI-Powered Task Manager",
+            description: "A smart todo list that prioritizes tasks using Natural Language Processing. Built with React and Python.",
+            tags: ["React", "Python", "NLP", "FastAPI"],
+            github: "#",
+            demo: "#"
+        },
+        {
+            title: "Blockchain Voting System",
+            description: "Secure decentralized voting application ensuring transparency and anonymity using Ethereum smart contracts.",
+            tags: ["Solidity", "Web3.js", "React", "Ethereum"],
+            github: "#",
+            demo: "#"
+        },
+        {
+            title: "Real-time Chat App",
+            description: "A WebSocket-based messaging platform allowing instant communication with end-to-end encryption.",
+            tags: ["Node.js", "Socket.io", "React", "Redis"],
+            github: "#",
+            demo: "#"
+        },
+        {
+            title: "Pet Adoption & Animal Welfare",
+            description: "A responsive web platform connecting pets with potential owners, promoting animal welfare awareness through interactive galleries and adoption listings.",
+            tags: ["HTML", "CSS", "JavaScript"],
+            github: "https://github.com/ajaygangwar945/Pet-Adoption-and-Animal-Welfare",
+            demo: "https://pet-adoption-and-animal-welfare.netlify.app"
+        },
+        {
+            title: "Real-time Weather Forecasting App",
+            description: "A responsive weather dashboard providing real-time data, geolocation support, and animated visualizations using the OpenWeatherMap API.",
+            tags: ["React", "JavaScript", "OpenWeatherMap API", "CSS", "HTML 5"],
+            github: "https://github.com/ajaygangwar945/Weather-App",
+            demo: "https://weather-forcasting-temperature.netlify.app"
+        },
+        {
+            title: "ICD-Mapping",
+            description: "A healthcare interoperability platform facilitating the integration of traditional Ayush systems with global standards through FHIR R4 compliance and ICD-11 dual coding.",
+            tags: ["Python", "FastAPI", "React", "Tailwind CSS"],
+            github: "https://github.com/ajaygangwar945/ICD-Mapping",
+            demo: "https://icd-mapping.onrender.com"
+        },
+        {
+            title: "ATS Resume Score",
+            description: "An AI-powered application leveraging Google Gemini to analyze resumes and provide actionable feedback on job description alignment.",
+            tags: ["Python", "Streamlit", "Google Gemini API"],
+            github: "https://github.com/ajaygangwar945/ATS-Resume-Score",
+            demo: "https://ats-resume-score-945.streamlit.app"
+        },
+        {
+            title: "Python Data Science Project",
+            description: "A comprehensive data analysis workflow performing data cleaning, exploration, and visualization using Jupyter Notebooks.",
+            tags: ["Python 3", "Jupyter Notebook", "Pandas", "Matplotlib / Seaborn"],
+            github: "https://github.com/ajaygangwar945/Python-Data-Science-Project",
+            demo: "https://github.com/ajaygangwar945/Python-Data-Science-Project"
+        }
+    ],
+    achievements: [
+        {
+            title: "Runner-up - BlockseBlock Hackathon 2025",
+            organization: "BlockseBlock",
+            description: "A national-level blockchain-based hackathon held across multiple campuses in India.",
+            icon: <Trophy size={20} />
+        },
+        {
+            title: "5th Place - Code Hunt 2025",
+            organization: "IIT Ropar",
+            description: "Participated in the annual Code Hunt competition and secured 5th place.",
+            icon: <Cpu size={20} />
+        },
+        {
+            title: "5 Star Coder",
+            organization: "HackerRank",
+            description: "Achieved top rank in Problem Solving and Data Structures.",
+            icon: <Code size={20} />
+        }
+    ],
+    education: [
+        {
+            degree: "Bachelor of Technology in Computer Science",
+            school: "Lovely Professional University",
+            year: "2023 - Present",
+            description: "Specializing in Data Science and Analytics. Core focus on Python, Machine Learning, and Full Stack Development. CGPA: 7.5/10"
+        },
+        {
+            degree: "Higher Secondary Education",
+            school: "Vidya Bhavan Public School",
+            year: "2021 - 2022",
+            description: "Major in Science (Physics, Chemistry, Mathematics)"
+        }
+    ],
+    experience: [
+        {
+            role: "Full Stack Developer Intern",
+            company: "Skillcraft Technology",
+            year: "Summer 2025",
+            description: "Developed and maintained web applications using React and Node.js. Improved site performance by 20%."
+        },
+        {
+            role: "Open Source Contributor",
+            company: "GitHub",
+            year: "2024 - Present",
+            description: "Contributed to various open source projects including bug fixes and feature additions."
+        }
+    ],
+
+    blogs: [
+        {
+            title: "Understanding React Hooks",
+            date: "Oct 2024",
+            description: "A deep dive into useEffect and useMemo.",
+            link: "#"
+        },
+        {
+            title: "The Future of Web Development",
+            date: "Sep 2024",
+            description: "Exploring WebAssembly and Edge Computing.",
+            link: "#"
+        }
+    ],
+    certificates: [
+        {
+            title: "Introduction to Modern AI",
+            organization: "Cisco",
+            date: "Nov, 2025",
+            image: "/cisco.png",
+            link: "https://drive.google.com/file/d/1-xYkSckZiMQ-kcfEix3g0knXnRWmu8Cd/view?usp=sharing"
+        },
+        {
+            title: "Python for Data Science",
+            organization: "NPTEL",
+            date: "Feb, 2025",
+            image: "/nptel.png",
+            link: "#"
+        },
+        {
+            title: "Software Engineering",
+            organization: "Coursera",
+            date: "May, 2024",
+            image: "/software.png",
+            link: "#"
+        }
+    ],
+    social: {
+        twitter: "https://twitter.com/ajaygangwar945",
+        twitterHandle: "@ajaygangwar945",
+        github: "https://github.com/ajaygangwar945",
+        linkedin: "https://www.linkedin.com/in/ajaygangwar945",
+        instagram: "https://instagram.com/ajaygangwar.945",
+        facebook: "https://facebook.com/ajaygangwar945",
+        discord: "https://discord.com/users/ajaygangwar945",
+        leetcode: "https://leetcode.com/ajaygangwar945",
+        codeforces: "https://codeforces.com/profile/ajaygangwar945",
+        kaggle: "https://kaggle.com/ajaygangwar945"
+    }
+};
+
+/* =============================================================================
+  🧠 GEMINI API INTEGRATION
+  IMPORTANT: For local development, you must get a free API Key from 
+  https://aistudio.google.com/app/apikey and paste it below.
+  =============================================================================
+*/
+export const GeminiService = {
+    generateContent: async (prompt) => {
+        // 🔑 API Key is now securely loaded from .env file
+        const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+
+        // NOTE: If apiKey is empty, AI features will return a placeholder message.
+        if (!apiKey) return "AI features require an API Key. Please add VITE_GEMINI_API_KEY to your .env file.";
+
+        const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+
+        try {
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    contents: [{ parts: [{ text: prompt }] }]
+                })
+            });
+
+            const data = await response.json();
+            return data.candidates?.[0]?.content?.parts?.[0]?.text || "Sorry, I couldn't generate a response.";
+        } catch (error) {
+            console.error("Gemini API Error:", error);
+            return "Error connecting to AI service.";
+        }
+    }
+};

@@ -1,12 +1,10 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import {
     Github,
     Linkedin,
     Mail,
     ExternalLink,
     Code,
-    Cpu,
-    Trophy,
     User,
     Terminal,
     ChevronDown,
@@ -18,191 +16,23 @@ import {
     Sparkles,
     MessageCircle,
     Loader2,
-    Bot,
     Briefcase,
-    GraduationCap,
     BookOpen,
     Mic,
     Twitter,
-    Globe
+    Instagram,
+    Facebook,
+    Database,
+    Award,
+    FileText
 } from 'lucide-react';
+import ChatBot from './ChatBot';
+import { PORTFOLIO_DATA, GeminiService } from './data';
 
-/* =============================================================================
-  🎨 USER CONTENT CONFIGURATION
-  Edit this section to update your portfolio data without touching the code logic!
-  =============================================================================
-*/
-const PORTFOLIO_DATA = {
-    personal: {
-        name: "Ajay Gangwar",
-        role: "Computer Science Student & Full Stack Developer",
-        about: "I am a passionate CSE undergrad with a knack for building scalable web applications and solving algorithmic problems. I love turning coffee into code and complex problems into simple solutions.",
-        email: "ajaygangwar945@gmail.com",
-        github: "https://github.com/ajaygangwar945",
-        linkedin: "https://www.linkedin.com/in/ajaygangwar945/",
-        resumeLink: "/resume.pdf"
-    },
-    skills: [
-        "Java", "Python", "C++", "React.js", "Node.js", "MongoDB", "SQL", "Git", "Docker", "AWS"
-    ],
-    stats: [
-        { label: "Projects Completed", value: "15+" },
-        { label: "LeetCode Solved", value: "500+" },
-        { label: "Hackathons Won", value: "3" },
-        { label: "Years Coding", value: "4" }
-    ],
-    projects: [
-        {
-            title: "AI-Powered Task Manager",
-            description: "A smart todo list that prioritizes tasks using Natural Language Processing. Built with React and Python.",
-            tags: ["React", "Python", "NLP", "FastAPI"],
-            github: "#",
-            demo: "#"
-        },
-        {
-            title: "Blockchain Voting System",
-            description: "Secure decentralized voting application ensuring transparency and anonymity using Ethereum smart contracts.",
-            tags: ["Solidity", "Web3.js", "React", "Ethereum"],
-            github: "#",
-            demo: "#"
-        },
-        {
-            title: "Real-time Chat App",
-            description: "A WebSocket-based messaging platform allowing instant communication with end-to-end encryption.",
-            tags: ["Node.js", "Socket.io", "React", "Redis"],
-            github: "#",
-            demo: "#"
-        }
-    ],
-    achievements: [
-        {
-            title: "1st Place - National Hackathon 2024",
-            organization: "Tech University",
-            description: "Built a disaster relief coordination platform in 24 hours.",
-            icon: <Trophy size={20} />
-        },
-        {
-            title: "Google Cloud Certified Associate",
-            organization: "Google Cloud",
-            description: "Demonstrated proficiency in deploying and managing cloud solutions.",
-            icon: <Cpu size={20} />
-        },
-        {
-            title: "5 Star Coder",
-            organization: "HackerRank",
-            description: "Achieved top rank in Problem Solving and Data Structures.",
-            icon: <Code size={20} />
-        }
-    ],
-    education: [
-        {
-            degree: "Bachelor of Technology in Computer Science",
-            school: "Tech University",
-            year: "2021 - 2025",
-            description: "Specializing in Artificial Intelligence and Machine Learning. CGPA: 9.0/10"
-        },
-        {
-            degree: "Higher Secondary Education",
-            school: "City High School",
-            year: "2019 - 2021",
-            description: "Major in Science (Physics, Chemistry, Mathematics)."
-        }
-    ],
-    experience: [
-        {
-            role: "Full Stack Developer Intern",
-            company: "Tech Solutions Inc.",
-            year: "Summer 2024",
-            description: "Developed and maintained web applications using React and Node.js. Improved site performance by 20%."
-        },
-        {
-            role: "Open Source Contributor",
-            company: "GitHub",
-            year: "2023 - Present",
-            description: "Contributed to various open source projects including bug fixes and feature additions."
-        }
-    ],
-    openSource: [
-        {
-            title: "React Library Contrib",
-            description: "Fixed critical bug in popular React component library.",
-            link: "https://github.com/example/repo"
-        },
-        {
-            title: "Node.js Tool",
-            description: "Created a CLI tool for developer productivity.",
-            link: "https://github.com/example/tool"
-        }
-    ],
-    blogs: [
-        {
-            title: "Understanding React Hooks",
-            date: "Oct 2024",
-            description: "A deep dive into useEffect and useMemo.",
-            link: "#"
-        },
-        {
-            title: "The Future of Web Development",
-            date: "Sep 2024",
-            description: "Exploring WebAssembly and Edge Computing.",
-            link: "#"
-        }
-    ],
-    talks: [
-        {
-            title: "Building Scalable Apps",
-            event: "TechConf 2024",
-            date: "Nov 2024",
-            link: "#"
-        }
-    ],
-    podcasts: [
-        {
-            title: "Ep 1: Journey into Tech",
-            show: "The Dev Podcast",
-            link: "#"
-        }
-    ],
-    social: {
-        twitter: "https://twitter.com/username",
-        twitterHandle: "@username",
-        github: "https://github.com/username"
-    }
-};
-
-/* =============================================================================
-  🧠 GEMINI API INTEGRATION
-  IMPORTANT: For local development, you must get a free API Key from 
-  https://aistudio.google.com/app/apikey and paste it below.
-  =============================================================================
-*/
-const GeminiService = {
-    generateContent: async (prompt) => {
-        // 🔑 API Key is now securely loaded from .env file
-        const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
-
-        // NOTE: If apiKey is empty, AI features will return a placeholder message.
-        if (!apiKey) return "AI features require an API Key. Please add VITE_GEMINI_API_KEY to your .env file.";
-
-        const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
-
-        try {
-            const response = await fetch(url, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    contents: [{ parts: [{ text: prompt }] }]
-                })
-            });
-
-            const data = await response.json();
-            return data.candidates?.[0]?.content?.parts?.[0]?.text || "Sorry, I couldn't generate a response.";
-        } catch (error) {
-            console.error("Gemini API Error:", error);
-            return "Error connecting to AI service.";
-        }
-    }
-};
+// Safety check
+if (!PORTFOLIO_DATA) {
+    console.error('PORTFOLIO_DATA is not defined. Please check data.jsx');
+}
 
 /* =============================================================================
   🚀 COMPONENT LOGIC
@@ -298,8 +128,8 @@ const ContactForm = ({ isDark }) => {
                 type="submit"
                 disabled={status === "submitting"}
                 className={`w-full py-3 rounded-lg font-bold transition-all shadow-lg flex justify-center items-center gap-2 ${isDark
-                        ? 'bg-cyan-600 text-white hover:bg-cyan-500 shadow-cyan-900/20 disabled:opacity-50'
-                        : 'bg-cyan-600 text-white hover:bg-cyan-700 shadow-cyan-600/20 disabled:opacity-50'
+                    ? 'bg-cyan-600 text-white hover:bg-cyan-500 shadow-cyan-900/20 disabled:opacity-50'
+                    : 'bg-cyan-600 text-white hover:bg-cyan-700 shadow-cyan-600/20 disabled:opacity-50'
                     }`}
             >
                 {status === "submitting" ? (
@@ -349,10 +179,20 @@ const ProjectCard = ({ project, isDark }) => (
                 <Code className={isDark ? "text-cyan-400" : "text-cyan-600"} size={24} />
             </div>
             <div className="flex gap-3">
-                <a href={project.github} className={`${isDark ? 'text-slate-400 hover:text-white' : 'text-slate-400 hover:text-slate-900'} transition-colors`}>
+                <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`${isDark ? 'text-slate-400 hover:text-white' : 'text-slate-400 hover:text-slate-900'} transition-colors`}
+                >
                     <Github size={20} />
                 </a>
-                <a href={project.demo} className={`${isDark ? 'text-slate-400 hover:text-white' : 'text-slate-400 hover:text-slate-900'} transition-colors`}>
+                <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`${isDark ? 'text-slate-400 hover:text-white' : 'text-slate-400 hover:text-slate-900'} transition-colors`}
+                >
                     <ExternalLink size={20} />
                 </a>
             </div>
@@ -435,6 +275,53 @@ const TimelineSection = ({ title, items, isDark }) => (
     </div>
 );
 
+const PositionTimelineItem = ({ position, isLast, isDark }) => (
+    <div className="relative pl-8 pb-8">
+        {!isLast && (
+            <div className={`absolute left-[11px] top-2 bottom-0 w-0.5 ${isDark ? 'bg-slate-700' : 'bg-slate-200'}`}></div>
+        )}
+        <div className={`absolute left-0 top-2 w-6 h-6 rounded-full border-4 ${isDark ? 'bg-slate-900 border-cyan-500' : 'bg-white border-cyan-600'}`}></div>
+        <div className={`p-6 rounded-xl border transition-all hover:-translate-y-1 ${isDark
+            ? 'bg-slate-800/50 border-slate-700 hover:border-cyan-500/50'
+            : 'bg-white border-slate-200 hover:border-cyan-500/50 shadow-sm'
+            }`}>
+            <div className="flex flex-col md:flex-row justify-between md:items-center mb-2">
+                <h4 className={`text-xl font-bold ${isDark ? 'text-white' : 'text-slate-800'}`}>
+                    {position.title}
+                </h4>
+                <span className={`text-sm font-medium px-3 py-1 rounded-full ${isDark ? 'bg-slate-700 text-cyan-300' : 'bg-cyan-50 text-cyan-700'}`}>
+                    {position.date}
+                </span>
+            </div>
+            <h5 className={`text-lg font-medium mb-3 ${isDark ? 'text-cyan-400' : 'text-cyan-600'}`}>
+                {position.role}
+            </h5>
+            <ul className={`space-y-2 mb-4 ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
+                {position.responsibilities.map((responsibility, idx) => (
+                    <li key={idx} className="flex items-start">
+                        <span className={`mr-3 mt-1.5 ${isDark ? 'text-cyan-400' : 'text-cyan-600'}`}>•</span>
+                        <span>{responsibility}</span>
+                    </li>
+                ))}
+            </ul>
+            {position.detailsLink && (
+                <a
+                    href={position.detailsLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all ${isDark
+                        ? 'bg-cyan-600 text-white hover:bg-cyan-500'
+                        : 'bg-cyan-600 text-white hover:bg-cyan-700'
+                        }`}
+                >
+                    <ExternalLink size={16} />
+                    More Details
+                </a>
+            )}
+        </div>
+    </div>
+);
+
 const GridCard = ({ item, type, isDark }) => (
     <div className={`group p-6 rounded-xl border transition-all hover:-translate-y-1 hover:shadow-lg ${isDark
         ? 'bg-slate-800/50 border-slate-700 hover:border-cyan-500/50'
@@ -466,165 +353,160 @@ const GridCard = ({ item, type, isDark }) => (
     </div>
 );
 
-const SocialSection = ({ data, isDark }) => (
-    <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-        <div className={`p-6 rounded-xl border ${isDark ? 'bg-slate-800/50 border-slate-700' : 'bg-white border-slate-200'}`}>
-            <div className="flex items-center gap-3 mb-6">
-                <Twitter className="text-[#1DA1F2]" size={24} />
-                <h3 className={`text-xl font-bold ${isDark ? 'text-white' : 'text-slate-800'}`}>Latest Tweets</h3>
+const SocialCard = ({ link, isDark, config }) => (
+    <a
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`group block p-6 rounded-2xl border transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${isDark
+            ? 'bg-slate-800 border-slate-700 hover:border-cyan-500/50 hover:shadow-cyan-500/10'
+            : 'bg-white border-slate-200 hover:border-cyan-500/50 hover:shadow-cyan-500/10 shadow-sm'
+            }`}
+    >
+        <div className="flex items-center gap-3 mb-4">
+            <div className={`p-3 rounded-xl transition-colors ${isDark ? 'bg-slate-700/50 group-hover:bg-cyan-500/20' : 'bg-slate-100 group-hover:bg-cyan-50'}`}>
+                {config.icon}
             </div>
-            <div className="space-y-4">
-                <p className={`italic ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
-                    "Just shipped a new feature! 🚀 #coding #react"
-                </p>
-                <a href={data.twitter} className="text-sm text-[#1DA1F2] hover:underline">
-                    View on Twitter
-                </a>
-            </div>
+            <h3 className={`font-bold text-lg ${isDark ? 'text-white' : 'text-slate-800'}`}>
+                {config.title}
+            </h3>
         </div>
-        <div className={`p-6 rounded-xl border ${isDark ? 'bg-slate-800/50 border-slate-700' : 'bg-white border-slate-200'}`}>
-            <div className="flex items-center gap-3 mb-6">
-                <Github className={isDark ? "text-white" : "text-slate-900"} size={24} />
-                <h3 className={`text-xl font-bold ${isDark ? 'text-white' : 'text-slate-800'}`}>GitHub Activity</h3>
-            </div>
-            <div className="space-y-4">
-                <div className="flex gap-2">
-                    <div className="w-3 h-3 rounded-sm bg-green-500"></div>
-                    <div className="w-3 h-3 rounded-sm bg-green-300"></div>
-                    <div className="w-3 h-3 rounded-sm bg-green-700"></div>
-                    <div className="w-3 h-3 rounded-sm bg-slate-700"></div>
-                </div>
-                <p className={`text-sm ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
-                    500+ contributions in the last year
-                </p>
-                <a href={data.github} className={`text-sm hover:underline ${isDark ? 'text-cyan-400' : 'text-cyan-600'}`}>
-                    View Profile
-                </a>
-            </div>
+
+        <p className={`mb-6 text-sm leading-relaxed ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
+            {config.content}
+        </p>
+
+        <div className={`flex items-center gap-2 text-sm font-medium ${isDark ? 'text-cyan-400' : 'text-cyan-600'}`}>
+            {config.action}
+            <ExternalLink size={16} className="transition-transform group-hover:translate-x-1" />
         </div>
-    </div>
+    </a>
 );
 
-const ChatBot = ({ isDark, isOpen, setIsOpen }) => {
-    const [messages, setMessages] = useState([
-        { role: 'model', text: "Hi! I'm Alex's AI Assistant. Ask me anything about his skills, projects, or experience!" }
-    ]);
-    const [input, setInput] = useState("");
-    const [isLoading, setIsLoading] = useState(false);
-    const messagesEndRef = useRef(null);
-
-    const scrollToBottom = () => {
-        messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-    };
-
-    useEffect(() => {
-        scrollToBottom();
-    }, [messages, isOpen]);
-
-    const handleSend = async () => {
-        if (!input.trim()) return;
-
-        const userMessage = input;
-        setInput("");
-        setMessages(prev => [...prev, { role: 'user', text: userMessage }]);
-        setIsLoading(true);
-
-        // Sanitize data (remove icons/React elements) before sending to AI to prevent crashes
-        const cleanData = JSON.parse(JSON.stringify(PORTFOLIO_DATA, (key, value) => {
-            if (key === 'icon') return undefined;
-            return value;
-        }));
-
-        const prompt = `
-      You are an AI assistant for a portfolio website of ${PORTFOLIO_DATA.personal.name}.
-      Here is the portfolio data: ${JSON.stringify(cleanData)}.
-      
-      User Question: "${userMessage}"
-      
-      Instructions:
-      1. Answer purely based on the portfolio data provided.
-      2. If the user asks something not in the data, say you don't know but suggest they contact Alex.
-      3. Be concise, friendly, and professional.
-      4. Keep answers under 3 sentences if possible.
-    `;
-
-        const reply = await GeminiService.generateContent(prompt);
-
-        setMessages(prev => [...prev, { role: 'model', text: reply }]);
-        setIsLoading(false);
-    };
-
-    if (!isOpen) return (
-        <button
-            onClick={() => setIsOpen(true)}
-            className={`fixed bottom-6 right-6 p-4 rounded-full shadow-2xl z-50 hover:scale-110 transition-transform ${isDark ? 'bg-cyan-500 text-slate-900' : 'bg-cyan-600 text-white'
-                }`}
-        >
-            <MessageCircle size={28} />
-        </button>
-    );
+const CertificateCard = ({ certificate, isDark }) => {
+    if (!certificate) return null;
 
     return (
-        <div className={`fixed bottom-6 right-6 w-80 md:w-96 h-[500px] rounded-2xl shadow-2xl flex flex-col z-50 border overflow-hidden ${isDark ? 'bg-slate-800 border-slate-700' : 'bg-white border-slate-200'
+        <div className={`group rounded-xl border transition-all duration-300 hover:-translate-y-2 hover:shadow-xl overflow-hidden ${isDark
+            ? 'bg-slate-800 border-slate-700 hover:border-cyan-500/50 hover:shadow-cyan-500/10'
+            : 'bg-white border-slate-200 hover:border-cyan-500/50 hover:shadow-cyan-500/10 shadow-sm'
             }`}>
-            {/* Header */}
-            <div className={`p-4 flex justify-between items-center border-b ${isDark ? 'bg-slate-900 border-slate-700' : 'bg-slate-50 border-slate-100'
-                }`}>
-                <div className="flex items-center gap-2">
-                    <Bot className={isDark ? "text-cyan-400" : "text-cyan-600"} size={20} />
-                    <h3 className={`font-bold ${isDark ? 'text-white' : 'text-slate-800'}`}>Alex&apos;s AI Assistant</h3>
+            <div className="relative h-48 overflow-hidden">
+                <img
+                    src={certificate.image || '/certificate-placeholder.jpg'}
+                    alt={certificate.title || 'Certificate'}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    onError={(e) => {
+                        if (e.target && e.target.nextElementSibling) {
+                            e.target.style.display = 'none';
+                            e.target.nextElementSibling.style.display = 'flex';
+                        }
+                    }}
+                />
+                <div className={`hidden absolute inset-0 items-center justify-center ${isDark ? 'bg-slate-800' : 'bg-slate-100'}`}>
+                    <FileText className={isDark ? "text-cyan-400" : "text-cyan-600"} size={64} />
                 </div>
-                <button onClick={() => setIsOpen(false)} className="text-slate-400 hover:text-slate-500">
-                    <X size={20} />
-                </button>
             </div>
-
-            {/* Messages */}
-            <div className="flex-1 overflow-y-auto p-4 space-y-4">
-                {messages.map((msg, i) => (
-                    <div key={i} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-                        <div className={`max-w-[80%] p-3 rounded-2xl text-sm ${msg.role === 'user'
-                            ? (isDark ? 'bg-cyan-600 text-white rounded-br-none' : 'bg-cyan-600 text-white rounded-br-none')
-                            : (isDark ? 'bg-slate-700 text-slate-200 rounded-bl-none' : 'bg-slate-100 text-slate-800 rounded-bl-none')
-                            }`}>
-                            {msg.text}
-                        </div>
+            <div className="p-6">
+                <div className="flex items-start justify-between mb-3">
+                    <div className={`p-2 rounded-lg ${isDark ? 'bg-slate-700/50 text-cyan-400' : 'bg-cyan-50 text-cyan-600'}`}>
+                        <Award size={20} />
                     </div>
-                ))}
-                {isLoading && (
-                    <div className="flex justify-start">
-                        <div className={`p-3 rounded-2xl rounded-bl-none ${isDark ? 'bg-slate-700' : 'bg-slate-100'}`}>
-                            <Loader2 className="animate-spin text-cyan-500" size={16} />
-                        </div>
-                    </div>
-                )}
-                <div ref={messagesEndRef} />
-            </div>
-
-            {/* Input */}
-            <div className={`p-4 border-t ${isDark ? 'border-slate-700' : 'border-slate-100'}`}>
-                <div className="flex gap-2">
-                    <input
-                        type="text"
-                        value={input}
-                        onChange={(e) => setInput(e.target.value)}
-                        onKeyPress={(e) => e.key === 'Enter' && handleSend()}
-                        placeholder="Ask about my projects..."
-                        className={`flex-1 px-4 py-2 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 ${isDark ? 'bg-slate-900 text-white placeholder-slate-500' : 'bg-slate-50 text-slate-900 placeholder-slate-400'
-                            }`}
-                    />
-                    <button
-                        onClick={handleSend}
-                        disabled={isLoading || !input.trim()}
-                        className={`p-2 rounded-lg transition-colors ${isDark
-                            ? 'bg-cyan-500 text-slate-900 hover:bg-cyan-400 disabled:opacity-50'
-                            : 'bg-cyan-600 text-white hover:bg-cyan-700 disabled:opacity-50'
-                            }`}
+                    <a
+                        href={certificate.link || '#'}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`transition-colors ${isDark ? 'text-slate-400 hover:text-cyan-400' : 'text-slate-400 hover:text-cyan-600'}`}
                     >
-                        <Send size={18} />
-                    </button>
+                        <ExternalLink size={18} />
+                    </a>
                 </div>
+                <h3 className={`text-lg font-bold mb-2 ${isDark ? 'text-white' : 'text-slate-800'}`}>
+                    {certificate.title || '[Certificate Title]'}
+                </h3>
+                <p className={`text-sm font-medium mb-2 ${isDark ? 'text-cyan-400' : 'text-cyan-600'}`}>
+                    {certificate.organization || '[Issuing Organization]'}
+                </p>
+                <p className={`text-xs ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
+                    {certificate.date || '[Month, Year]'}
+                </p>
             </div>
+        </div>
+    );
+};
+
+const SocialSection = ({ data, isDark }) => {
+    const socialConfig = {
+        twitter: {
+            title: "Latest Tweets",
+            content: "\"Just shipped a new feature! 🚀 #coding #react\"",
+            action: "View on Twitter",
+            icon: <Twitter size={24} className={isDark ? "text-cyan-400" : "text-cyan-600"} />
+        },
+        github: {
+            title: "GitHub Activity",
+            content: "500+ contributions in the last year. Check out my latest repos!",
+            action: "View Profile",
+            icon: <Github size={24} className={isDark ? "text-cyan-400" : "text-cyan-600"} />
+        },
+        linkedin: {
+            title: "Professional Network",
+            content: "Let's connect and discuss potential opportunities and collaborations.",
+            action: "Connect with me",
+            icon: <Linkedin size={24} className={isDark ? "text-cyan-400" : "text-cyan-600"} />
+        },
+        instagram: {
+            title: "Latest Moments",
+            content: "Sharing my daily life, travel adventures, and coding setup.",
+            action: "Check Gallery",
+            icon: <Instagram size={24} className={isDark ? "text-cyan-400" : "text-cyan-600"} />
+        },
+        facebook: {
+            title: "Social Circle",
+            content: "Stay in touch with my personal updates and events.",
+            action: "Add Friend",
+            icon: <Facebook size={24} className={isDark ? "text-cyan-400" : "text-cyan-600"} />
+        },
+        discord: {
+            title: "Community Chat",
+            content: "Join our developer community server. Let's chat about code!",
+            action: "Join Server",
+            icon: <MessageCircle size={24} className={isDark ? "text-cyan-400" : "text-cyan-600"} />
+        },
+        leetcode: {
+            title: "Problem Solving",
+            content: "Solved 500+ problems. Consistent daily streak!",
+            action: "View Solutions",
+            icon: <Code size={24} className={isDark ? "text-cyan-400" : "text-cyan-600"} />
+        },
+        codeforces: {
+            title: "Competitive Prog.",
+            content: "Max Rating: 1600 (Specialist). Participating in weekly contests.",
+            action: "View Rating",
+            icon: <Terminal size={24} className={isDark ? "text-cyan-400" : "text-cyan-600"} />
+        },
+        kaggle: {
+            title: "Data Science",
+            content: "Exploring datasets and building ML models. 2x Silver Medalist.",
+            action: "View Notebooks",
+            icon: <Database size={24} className={isDark ? "text-cyan-400" : "text-cyan-600"} />
+        }
+    };
+
+    return (
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {Object.entries(data).map(([platform, link]) => {
+                if (platform === 'twitterHandle' || !socialConfig[platform]) return null;
+                return (
+                    <SocialCard
+                        key={platform}
+                        platform={platform}
+                        link={link}
+                        isDark={isDark}
+                        config={socialConfig[platform]}
+                    />
+                );
+            })}
         </div>
     );
 };
@@ -639,20 +521,20 @@ const ProjectGenerator = ({ isDark }) => {
         setShowModal(true);
         setSuggestion(null);
 
-        const skills = PORTFOLIO_DATA.skills.join(", ");
+        const skills = PORTFOLIO_DATA?.skills?.join(", ") || "";
         const prompt = `
-      Create a unique, advanced coding project idea for a Computer Science portfolio.
-      
-      The student has these skills: ${skills}.
-      
-      The project should:
-      1. Combine at least 3 of these skills.
-      2. Solve a real-world problem.
-      3. Have a creative name.
-      4. Include a brief feature list.
-      
-      Format the response as JSON: { "title": "Project Name", "description": "Short description", "stack": ["Tech1", "Tech2"], "features": ["Feature 1", "Feature 2"] }
-    `;
+            Create a unique, advanced coding project idea for a Computer Science portfolio.
+
+            The student has these skills: ${skills}.
+
+            The project should:
+            1. Combine at least 3 of these skills.
+            2. Solve a real-world problem.
+            3. Have a creative name.
+            4. Include a brief feature list.
+
+            Format the response as JSON: {"title": "Project Name", "description": "Short description", "stack": ["Tech1", "Tech2"], "features": ["Feature 1", "Feature 2"] }
+            `;
 
         try {
             const result = await GeminiService.generateContent(prompt);
@@ -712,6 +594,7 @@ const ProjectGenerator = ({ isDark }) => {
                                     <h4 className={`text-xl font-bold mb-2 ${isDark ? 'text-purple-300' : 'text-purple-700'}`}>
                                         {suggestion.title}
                                     </h4>
+
                                     <p className={`text-sm ${isDark ? 'text-slate-300' : 'text-slate-600'}`}>
                                         {suggestion.description}
                                     </p>
@@ -723,7 +606,6 @@ const ProjectGenerator = ({ isDark }) => {
                                         {suggestion.stack?.map((tech, i) => (
                                             <span key={i} className={`px-2 py-1 text-xs rounded font-medium ${isDark ? 'bg-slate-700 text-cyan-300' : 'bg-slate-100 text-cyan-700'
                                                 }`}>
-                                                {/* Ensure we render strings, even if API sends objects */}
                                                 {typeof tech === 'string' ? tech : JSON.stringify(tech)}
                                             </span>
                                         ))}
@@ -756,6 +638,18 @@ export default function App() {
     const [isChatOpen, setIsChatOpen] = useState(false);
 
     useEffect(() => {
+        try {
+            if (!PORTFOLIO_DATA) {
+                console.error('PORTFOLIO_DATA is undefined!');
+            } else {
+                console.log('PORTFOLIO_DATA loaded:', Object.keys(PORTFOLIO_DATA));
+            }
+        } catch (error) {
+            console.error('Error checking PORTFOLIO_DATA:', error);
+        }
+    }, []);
+
+    useEffect(() => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 50);
         };
@@ -778,7 +672,7 @@ export default function App() {
                 <div className="container mx-auto px-6 flex justify-between items-center">
                     <a href="#" className={`text-2xl font-bold flex items-center gap-2 ${isDark ? 'text-white' : 'text-slate-900'}`}>
                         <Terminal className={isDark ? "text-cyan-400" : "text-cyan-600"} />
-                        <span>{PORTFOLIO_DATA.personal.name}<span className={isDark ? "text-cyan-400" : "text-cyan-600"}>.</span></span>
+                        <span>{(PORTFOLIO_DATA?.personal?.name) || 'Portfolio'}<span className={isDark ? "text-cyan-400" : "text-cyan-600"}>.</span></span>
                     </a>
 
                     {/* Desktop Menu */}
@@ -786,8 +680,9 @@ export default function App() {
                         <NavLink href="#about" isDark={isDark}>About</NavLink>
                         <NavLink href="#experience" isDark={isDark}>Experience</NavLink>
                         <NavLink href="#projects" isDark={isDark}>Projects</NavLink>
-                        <NavLink href="#education" isDark={isDark}>Education</NavLink>
                         <NavLink href="#achievements" isDark={isDark}>Achievements</NavLink>
+                        <NavLink href="#certificates" isDark={isDark}>Certificates</NavLink>
+                        <NavLink href="#education" isDark={isDark}>Education</NavLink>
                         <NavLink href="#content" isDark={isDark}>Content</NavLink>
 
                         {/* Theme Toggle */}
@@ -828,8 +723,9 @@ export default function App() {
                         <NavLink href="#about" mobile isDark={isDark} onClick={() => setIsMenuOpen(false)}>About</NavLink>
                         <NavLink href="#experience" mobile isDark={isDark} onClick={() => setIsMenuOpen(false)}>Experience</NavLink>
                         <NavLink href="#projects" mobile isDark={isDark} onClick={() => setIsMenuOpen(false)}>Projects</NavLink>
-                        <NavLink href="#education" mobile isDark={isDark} onClick={() => setIsMenuOpen(false)}>Education</NavLink>
                         <NavLink href="#achievements" mobile isDark={isDark} onClick={() => setIsMenuOpen(false)}>Achievements</NavLink>
+                        <NavLink href="#certificates" mobile isDark={isDark} onClick={() => setIsMenuOpen(false)}>Certificates</NavLink>
+                        <NavLink href="#education" mobile isDark={isDark} onClick={() => setIsMenuOpen(false)}>Education</NavLink>
                         <NavLink href="#content" mobile isDark={isDark} onClick={() => setIsMenuOpen(false)}>Content</NavLink>
                         <NavLink href="#contact" mobile isDark={isDark} onClick={() => setIsMenuOpen(false)}>Contact</NavLink>
                     </div>
@@ -884,7 +780,17 @@ export default function App() {
                         </div>
 
                         {/* Hero Visual/Stats */}
-                        <div className="flex-1 w-full max-w-lg">
+                        <div className="flex-1 w-full max-w-lg relative">
+                            {/* Profile Image */}
+                            <div className="mb-8 relative group">
+                                <div className={`absolute inset-0 rounded-full blur-2xl opacity-40 group-hover:opacity-60 transition-opacity ${isDark ? 'bg-cyan-500' : 'bg-cyan-400'}`}></div>
+                                <img
+                                    src={PORTFOLIO_DATA.personal.profileImage}
+                                    alt={PORTFOLIO_DATA.personal.name}
+                                    className={`relative w-64 h-64 mx-auto object-cover rounded-full border-4 shadow-2xl transition-transform group-hover:scale-105 ${isDark ? 'border-slate-800' : 'border-white'}`}
+                                />
+                            </div>
+
                             <div className="grid grid-cols-2 gap-4">
                                 {PORTFOLIO_DATA.stats.map((stat, idx) => (
                                     <div key={idx} className={`border p-6 rounded-2xl backdrop-blur-sm transition-all ${isDark
@@ -929,14 +835,69 @@ export default function App() {
             {/* Experience Section */}
             <section id="experience" className={`py-24 ${isDark ? 'bg-slate-800/50' : 'bg-slate-100'}`}>
                 <div className="container mx-auto px-6">
-                    <TimelineSection title="Work Experience" items={PORTFOLIO_DATA.experience} isDark={isDark} />
+                    <TimelineSection title="Experience" items={PORTFOLIO_DATA.experience} isDark={isDark} />
                 </div>
             </section>
 
-            {/* Education Section */}
-            <section id="education" className={`py-24 ${isDark ? 'bg-slate-900' : 'bg-slate-50'}`}>
+            {/* Positions of Responsibility Section */}
+            <section id="positions" className={`py-24 ${isDark ? 'bg-slate-800/50' : 'bg-slate-100'}`}>
                 <div className="container mx-auto px-6">
-                    <TimelineSection title="Education" items={PORTFOLIO_DATA.education} isDark={isDark} />
+                    <SectionTitle title="Positions of Responsibility" subtitle="Leadership & Community Roles" isDark={isDark} />
+                    <div className="max-w-3xl mx-auto">
+                        <div className="mt-8">
+                            {/* SCC */}
+                            <PositionTimelineItem
+                                position={{
+                                    title: "SCC",
+                                    role: "Member",
+                                    date: "Sep, 2025 – Present",
+                                    detailsLink: "/scc.html",
+                                    responsibilities: [
+                                        "Represented the student body in meetings with faculty and management, effectively communicating academic and non-academic concerns.",
+                                        "Actively contributed to organizing and managing technical events, including coding competitions, workshops, and hackathons, fostering a culture of innovation and technical growth among students.",
+                                        "Coordinated with tech communities on campus to bring industry speakers, hands-on sessions, and technology awareness programs, enhancing peer learning and skill development."
+                                    ]
+                                }}
+                                isLast={false}
+                                isDark={isDark}
+                            />
+
+                            {/* Hostel Committee */}
+                            <PositionTimelineItem
+                                position={{
+                                    title: "Hostel Committee",
+                                    role: "Member",
+                                    date: "Jan, 2024 – Aug, 2024",
+                                    detailsLink: "/hostel-committee.html",
+                                    responsibilities: [
+                                        "Managed student welfare and conflict resolution for a residence of 500+ students, ensuring a safe and supportive living environment.",
+                                        "Acted as a liaison between residents and the administration to resolve maintenance issues and upgrade facility resources.",
+                                        "Organized community-building events and festivals, increasing student engagement and participation."
+                                    ]
+                                }}
+                                isLast={false}
+                                isDark={isDark}
+                            />
+
+                            {/* IGCMUN */}
+                            <PositionTimelineItem
+                                position={{
+                                    title: "IGC MUN",
+                                    role: "Member",
+                                    date: "Jan, 2024 – Apr, 2024",
+                                    detailsLink: "/igcmun.html",
+                                    responsibilities: [
+                                        "Engaged in diplomatic debates and extensive research on global policies to represent assigned portfolios effectively.",
+                                        "Drafted working papers and resolutions while collaborating with diverse teams to reach consensus on complex international issues.",
+                                        "Honed public speaking and negotiation skills through formal committee sessions and caucuses."
+                                    ]
+                                }}
+                                isLast={true}
+                                isDark={isDark}
+                            />
+
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -962,30 +923,6 @@ export default function App() {
                 </div>
             </section>
 
-            {/* Open Source Section */}
-            <section className={`py-24 ${isDark ? 'bg-slate-900' : 'bg-slate-50'}`}>
-                <div className="container mx-auto px-6">
-                    <SectionTitle title="Open Source" subtitle="Contributing to the community" isDark={isDark} />
-                    <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                        {PORTFOLIO_DATA.openSource.map((project, index) => (
-                            <div key={index} className={`p-6 rounded-xl border transition-all hover:-translate-y-1 ${isDark
-                                ? 'bg-slate-800 border-slate-700 hover:border-cyan-500'
-                                : 'bg-white border-slate-200 hover:border-cyan-600 shadow-sm'
-                                }`}>
-                                <div className="flex justify-between items-start mb-4">
-                                    <Github className={isDark ? "text-cyan-400" : "text-cyan-600"} size={24} />
-                                    <a href={project.link} className={isDark ? "text-slate-400 hover:text-white" : "text-slate-400 hover:text-slate-900"}>
-                                        <ExternalLink size={20} />
-                                    </a>
-                                </div>
-                                <h3 className={`text-xl font-bold mb-2 ${isDark ? 'text-white' : 'text-slate-800'}`}>{project.title}</h3>
-                                <p className={isDark ? 'text-slate-400' : 'text-slate-600'}>{project.description}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
             {/* Achievements Section */}
             <section id="achievements" className={`py-24 ${isDark ? 'bg-slate-900' : 'bg-slate-50'}`}>
                 <div className="container mx-auto px-6">
@@ -1004,8 +941,34 @@ export default function App() {
                 </div>
             </section>
 
+            {/* Certificates Section */}
+            <section id="certificates" className={`py-24 ${isDark ? 'bg-slate-800/50' : 'bg-slate-100'}`}>
+                <div className="container mx-auto px-6">
+                    <SectionTitle title="Certificates" subtitle="Professional certifications and achievements" isDark={isDark} />
+
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                        {PORTFOLIO_DATA?.certificates && Array.isArray(PORTFOLIO_DATA.certificates) && PORTFOLIO_DATA.certificates.length > 0 ? (
+                            PORTFOLIO_DATA.certificates.map((certificate, index) => (
+                                <CertificateCard key={index} certificate={certificate} isDark={isDark} />
+                            ))
+                        ) : (
+                            <p className={`col-span-full text-center ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
+                                No certificates to display yet.
+                            </p>
+                        )}
+                    </div>
+                </div>
+            </section >
+
+            {/* Education Section */}
+            < section id="education" className={`py-24 ${isDark ? 'bg-slate-900' : 'bg-slate-50'}`}>
+                <div className="container mx-auto px-6">
+                    <TimelineSection title="Education" items={PORTFOLIO_DATA.education} isDark={isDark} />
+                </div>
+            </section >
+
             {/* Content Section (Blogs, Talks, Podcasts) */}
-            <section id="content" className={`py-24 ${isDark ? 'bg-slate-800/50' : 'bg-slate-100'}`}>
+            < section id="content" className={`py-24 ${isDark ? 'bg-slate-800/50' : 'bg-slate-100'}`}>
                 <div className="container mx-auto px-6">
                     <SectionTitle title="Content Creation" subtitle="Sharing knowledge through various mediums" isDark={isDark} />
 
@@ -1019,40 +982,20 @@ export default function App() {
                                 ))}
                             </div>
                         </div>
-
-                        {/* Talks */}
-                        <div>
-                            <h3 className={`text-2xl font-bold mb-8 text-center ${isDark ? 'text-slate-200' : 'text-slate-700'}`}>Tech Talks</h3>
-                            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                                {PORTFOLIO_DATA.talks.map((item, index) => (
-                                    <GridCard key={index} item={item} type="talk" isDark={isDark} />
-                                ))}
-                            </div>
-                        </div>
-
-                        {/* Podcasts */}
-                        <div>
-                            <h3 className={`text-2xl font-bold mb-8 text-center ${isDark ? 'text-slate-200' : 'text-slate-700'}`}>Podcasts</h3>
-                            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                                {PORTFOLIO_DATA.podcasts.map((item, index) => (
-                                    <GridCard key={index} item={item} type="podcast" isDark={isDark} />
-                                ))}
-                            </div>
-                        </div>
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* Social Section */}
-            <section className={`py-24 ${isDark ? 'bg-slate-900' : 'bg-slate-50'}`}>
+            < section className={`py-24 ${isDark ? 'bg-slate-900' : 'bg-slate-50'}`}>
                 <div className="container mx-auto px-6">
                     <SectionTitle title="Social Feed" subtitle="Stay connected with my latest updates" isDark={isDark} />
                     <SocialSection data={PORTFOLIO_DATA.social} isDark={isDark} />
                 </div>
-            </section>
+            </section >
 
             {/* Contact Section */}
-            <section id="contact" className={`py-24 ${isDark ? 'bg-gradient-to-b from-slate-900 to-slate-800' : 'bg-gradient-to-b from-slate-50 to-slate-200'}`}>
+            < section id="contact" className={`py-24 ${isDark ? 'bg-gradient-to-b from-slate-900 to-slate-800' : 'bg-gradient-to-b from-slate-50 to-slate-200'}`}>
                 <div className="container mx-auto px-6 max-w-4xl text-center">
                     <SectionTitle title="Get In Touch" subtitle="Have a project in mind or want to discuss the latest tech?" isDark={isDark} />
 
@@ -1078,11 +1021,11 @@ export default function App() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* ✨ GEMINI FEATURE 2: AI Chatbot ✨ */}
-            <ChatBot isDark={isDark} isOpen={isChatOpen} setIsOpen={setIsChatOpen} />
+            < ChatBot isDark={isDark} isOpen={isChatOpen} setIsOpen={setIsChatOpen} />
 
-        </div>
+        </div >
     );
 }
