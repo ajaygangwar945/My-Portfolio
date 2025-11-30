@@ -169,6 +169,20 @@ export const PORTFOLIO_DATA = {
             date: "May, 2024",
             image: "/software.png",
             link: "#"
+        },
+        {
+            title: "Software Engineering",
+            organization: "Coursera",
+            date: "May, 2024",
+            image: "/software.png",
+            link: "#"
+        },
+        {
+            title: "Software Engineering",
+            organization: "Coursera",
+            date: "May, 2024",
+            image: "/software.png",
+            link: "#"
         }
     ],
     social: {

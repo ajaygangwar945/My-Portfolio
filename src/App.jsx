@@ -11,6 +11,7 @@ import ChatBot from './ChatBot';
 import { PORTFOLIO_DATA } from './data';
 import Home from './Home';
 import AllProjects from './AllProjects';
+import AllCertificates from './AllCertificates';
 
 // NavLink Component
 const NavLink = ({ href, children, mobile, onClick, isDark }) => {
@@ -148,6 +149,7 @@ export default function App() {
                 <Routes>
                     <Route path="/" element={<Home isDark={isDark} />} />
                     <Route path="/projects" element={<AllProjects isDark={isDark} />} />
+                    <Route path="/certificates" element={<AllCertificates isDark={isDark} />} />
                 </Routes>
 
                 {/* ✨ GEMINI FEATURE 2: AI Chatbot ✨ */}
