@@ -10,7 +10,7 @@ export const PORTFOLIO_DATA = {
     personal: {
         name: "Ajay Gangwar",
         role: "Computer Science Student & Data Science Enthusiast",
-        about: "I am a passionate CSE undergrad specializing in Data Science, Machine Learning, and Python programming. I enjoy working with real-world datasets, building predictive models, and uncovering insights through analytics. With hands-on experience in data preprocessing, visualization, statistical analysis, and ML algorithms, I love transforming raw data into meaningful solutions and intelligent systems.",
+        about: "Passionate CSE undergrad specializing in Data Science, ML, and Python. I thrive on building predictive models and transforming raw data into intelligent, actionable solutions.",
         email: "ajaygangwar945@gmail.com",
         github: "https://github.com/ajaygangwar945",
         linkedin: "https://www.linkedin.com/in/ajaygangwar945/",
@@ -18,7 +18,7 @@ export const PORTFOLIO_DATA = {
         profileImage: "/profile.jpg"
     },
     skills: [
-        "Java", "Python", "C++", "React.js", "Node.js", "MongoDB", "SQL", "Git", "Docker", "AWS"
+        "HTML", "CSS", "JavaScript", "Java", "Python", "C++", "React.js", "Node.js", "MongoDB", "SQL", "Git", "Docker", "AWS"
     ],
     stats: [
         { label: "Projects Completed", value: "15+" },
