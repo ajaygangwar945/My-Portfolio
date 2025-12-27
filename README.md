@@ -8,6 +8,11 @@
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=flat&logo=javascript&logoColor=black)
 ![Gemini AI](https://img.shields.io/badge/Gemini_AI-API-4285F4?style=flat&logo=google&logoColor=white)
 
+[![Live Demo](https://img.shields.io/badge/Live-Demo-success?style=flat&logo=netlify&logoColor=white)](https://ajay-gangwar-portfolio.netlify.app/)
+![Deployment](https://img.shields.io/badge/Deployed_on-Netlify-00C7B7?style=flat&logo=netlify&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Live-brightgreen?style=flat)
+
+
 </div>
 
 ---
@@ -19,8 +24,9 @@ This is a personal portfolio website built using <b>React</b>, <b>Vite</b>, and 
 </p>
 
 <p align="justify">
-The portfolio integrates <b>Google Gemini AI</b> to enhance interactivity and demonstrate real-world API usage. It is designed to be fast, scalable, and easy to maintain, making it suitable for professional and portfolio use.
+The portfolio integrates <b>Google Gemini AI</b> to demonstrate real-world API usage and intelligent features. It is optimized for performance, scalability, and maintainability, making it suitable for professional presentation and deployment.
 </p>
+
 
 ---
 
@@ -43,36 +49,45 @@ cd my-portfolio
 ```
 
 ### 2️⃣ Install dependencies
-```
+```bash
 npm install
 ```
 
 ### 3️⃣ Configure API Key
 
-Create a .env file in the root directory
+- Create a `.env` file in the root directory  
+- Get your free Gemini API key from:  
+  https://aistudio.google.com/app/apikey  
+- Add the following line to the file:
 
-Get your free Gemini API key from
-👉 https://aistudio.google.com/app/apikey
-
-Add the key:
-
+```env
 VITE_GEMINI_API_KEY=your_actual_api_key_here
+```
 
-4️⃣ Run the development server
+### 4️⃣ Run the Development Server
+
+```bash
 npm run dev
+```
+---
 
-🏗️ Build for Production
+## 🏗️ Build for Production
 
-Build the project:
-
+### Build the project
+```bash
 npm run build
+```
 
 
-Preview the production build:
-
+### Preview the production build
+```bash
 npm run preview
+```
+---
 
-📂 Project Structure
+## 📂 Project Structure
+
+```
 my-portfolio/
 ├── src/        # Application source code
 ├── public/     # Static assets
@@ -80,32 +95,23 @@ my-portfolio/
 ├── .env        # Environment variables
 ├── package.json
 └── README.md
+```
+---
 
-🌐 Deployment
 
-You can deploy this portfolio using:
+## 🌐 Deployment
 
-Vercel
+This portfolio is deployed using **Netlify**.
 
-Netlify
+[![Netlify Status](https://img.shields.io/badge/Netlify-Live-00C7B7?style=flat&logo=netlify&logoColor=white)](https://ajay-gangwar-portfolio.netlify.app/)
 
-GitHub Pages
 
-(Recommended: Vercel or Netlify for Vite projects)
 
-📄 License
-
-This project is for personal and educational use.
-You may customize and reuse it for your own portfolio.
+---
 
 <div align="center">
 ⭐ If you like this portfolio, consider giving it a star!
 
 Built with ❤️ using React, Vite, and Tailwind CSS
 
-</div> ```
-
-### 2️⃣ Install dependencies
-
-```bash
-npm install
+</div>
