@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Trophy, Cpu, Code } from 'lucide-react';
 
 /* =============================================================================
@@ -277,7 +277,7 @@ export const GeminiService = {
         // NOTE: If apiKey is empty, AI features will return a placeholder message.
         if (!apiKey) return "AI features require an API Key. Please add VITE_GEMINI_API_KEY to your .env file.";
 
-        const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+        const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
 
         try {
             const response = await fetch(url, {
