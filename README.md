@@ -12,7 +12,6 @@
 ![Deployment](https://img.shields.io/badge/Deployed_on-Netlify-00C7B7?style=flat&logo=netlify&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Live-brightgreen?style=flat)
 
-
 </div>
 
 ---
@@ -27,7 +26,6 @@ This is a personal portfolio website built using <b>React</b>, <b>Vite</b>, and 
 The portfolio integrates <b>Google Gemini AI</b> to demonstrate real-world API usage and intelligent features. It is optimized for performance, scalability, and maintainability, making it suitable for professional presentation and deployment.
 </p>
 
-
 ---
 
 ## 🛠️ Tech Stack
@@ -35,20 +33,29 @@ The portfolio integrates <b>Google Gemini AI</b> to demonstrate real-world API u
 - ⚛️ **React** – Component-based UI development  
 - ⚡ **Vite** – Fast build tool and dev server  
 - 🎨 **Tailwind CSS** – Utility-first styling  
-- 🤖 **Gemini AI API** – AI-powered features  
+- 🤖 **Gemini AI API** – Powers the **AI Assistant** and **Project Idea Generator**
 - 🌐 **JavaScript (ES6+)**
+
+## ✨ Key Features
+
+- **AI ChatBot Assistant**: A secure, markdown-rendered interaction with Gemini AI to answer questions about my background.
+- **AI Project Idea Generator**: Generates unique, creative coding project ideas based on my specific skill set.
+- **Responsive Design**: Fully optimized for mobile and desktop viewing.
+- **Dark Mode**: Sleek, eye-friendly dark theme support.
 
 ---
 
 ## 🛠️ Setup & Configuration
 
 ### 1️⃣ Clone the repository
+
 ```bash
 git clone https://github.com/your-username/my-portfolio.git
 cd my-portfolio
 ```
 
 ### 2️⃣ Install dependencies
+
 ```bash
 npm install
 ```
@@ -57,7 +64,7 @@ npm install
 
 - Create a `.env` file in the root directory  
 - Get your free Gemini API key from:  
-  https://aistudio.google.com/app/apikey  
+  <https://aistudio.google.com/app/apikey>  
 - Add the following line to the file:
 
 ```env
@@ -69,20 +76,23 @@ VITE_GEMINI_API_KEY=your_actual_api_key_here
 ```bash
 npm run dev
 ```
+
 ---
 
 ## 🏗️ Build for Production
 
 ### Build the project
+
 ```bash
 npm run build
 ```
 
-
 ### Preview the production build
+
 ```bash
 npm run preview
 ```
+
 ---
 
 ## 📂 Project Structure
@@ -96,16 +106,14 @@ my-portfolio/
 ├── package.json
 └── README.md
 ```
----
 
+---
 
 ## 🌐 Deployment
 
 This portfolio is deployed using **Netlify**.
 
 [![Netlify Status](https://img.shields.io/badge/Netlify-Live-00C7B7?style=flat&logo=netlify&logoColor=white)](https://ajay-gangwar-portfolio.netlify.app/)
-
-
 
 ---
 

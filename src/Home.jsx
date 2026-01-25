@@ -262,7 +262,7 @@ const GridCard = ({ item, type, isDark }) => (
                 {type === 'podcast' && <Briefcase size={24} />}
             </div>
             {item.link && (
-                <a href={item.link} className={`transition-colors ${isDark ? 'text-slate-400 hover:text-white' : 'text-slate-400 hover:text-slate-900'}`}>
+                <a href={item.link} target="_blank" rel="noopener noreferrer" className={`transition-colors ${isDark ? 'text-slate-400 hover:text-white' : 'text-slate-400 hover:text-slate-900'}`}>
                     <ExternalLink size={20} />
                 </a>
             )}
@@ -447,7 +447,7 @@ const ProjectGenerator = ({ isDark }) => {
             {/* Modal */}
             {showModal && (
                 <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-                    <div className={`w-full max-w-lg rounded-2xl p-6 relative shadow-2xl ${isDark ? 'bg-slate-800 border border-slate-700' : 'bg-white'
+                    <div className={`w-full max-w-lg rounded-2xl p-6 relative shadow-2xl max-h-[85vh] overflow-y-auto scrollbar-thin scrollbar-thumb-slate-400/20 scrollbar-track-transparent ${isDark ? 'bg-slate-800 border border-slate-700' : 'bg-white'
                         }`}>
                         <button
                             onClick={() => setShowModal(false)}
@@ -544,7 +544,7 @@ const Home = ({ isDark }) => {
                                     }`}>
                                     View Work
                                 </a>
-                                <a href={PORTFOLIO_DATA.personal.resumeLink} className={`px-8 py-3 border rounded-lg font-bold transition-colors flex items-center gap-2 ${isDark
+                                <a href={PORTFOLIO_DATA.personal.resumeLink} target="_blank" rel="noopener noreferrer" className={`px-8 py-3 border rounded-lg font-bold transition-colors flex items-center gap-2 ${isDark
                                     ? 'bg-slate-800 text-white border-slate-700 hover:border-cyan-500'
                                     : 'bg-white text-slate-800 border-slate-200 hover:border-cyan-600 hover:text-cyan-600'
                                     }`}>
@@ -553,8 +553,8 @@ const Home = ({ isDark }) => {
                             </div>
 
                             <div className={`flex gap-6 justify-center md:justify-start pt-6 ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
-                                <a href={PORTFOLIO_DATA.personal.github} className={`transition-colors hover:scale-110 transform ${isDark ? 'hover:text-white' : 'hover:text-slate-900'}`}><Github size={24} /></a>
-                                <a href={PORTFOLIO_DATA.personal.linkedin} className={`transition-colors hover:scale-110 transform ${isDark ? 'hover:text-white' : 'hover:text-slate-900'}`}><Linkedin size={24} /></a>
+                                <a href={PORTFOLIO_DATA.personal.github} target="_blank" rel="noopener noreferrer" className={`transition-colors hover:scale-110 transform ${isDark ? 'hover:text-white' : 'hover:text-slate-900'}`}><Github size={24} /></a>
+                                <a href={PORTFOLIO_DATA.personal.linkedin} target="_blank" rel="noopener noreferrer" className={`transition-colors hover:scale-110 transform ${isDark ? 'hover:text-white' : 'hover:text-slate-900'}`}><Linkedin size={24} /></a>
                                 <a href={`mailto:${PORTFOLIO_DATA.personal.email}`} className={`transition-colors hover:scale-110 transform ${isDark ? 'hover:text-white' : 'hover:text-slate-900'}`}><Mail size={24} /></a>
                             </div>
                         </div>
@@ -701,7 +701,7 @@ const Home = ({ isDark }) => {
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
                         {PORTFOLIO_DATA?.certificates && Array.isArray(PORTFOLIO_DATA.certificates) && PORTFOLIO_DATA.certificates.length > 0 ? (
-                            PORTFOLIO_DATA.certificates.map((certificate, index) => (
+                            PORTFOLIO_DATA.certificates.slice(0, 6).map((certificate, index) => (
                                 <CertificateCard key={index} certificate={certificate} isDark={isDark} />
                             ))
                         ) : (
@@ -733,24 +733,6 @@ const Home = ({ isDark }) => {
                 </div>
             </section >
 
-            {/* Content Section (Blogs, Talks, Podcasts) */}
-            < section id="content" className={`py-24 ${isDark ? 'bg-slate-800/50' : 'bg-slate-100'}`}>
-                <div className="container mx-auto px-6">
-                    <SectionTitle title="Content Creation" subtitle="Sharing knowledge through various mediums" isDark={isDark} />
-
-                    <div className="space-y-16">
-                        {/* Blogs */}
-                        <div>
-                            <h3 className={`text-2xl font-bold mb-8 text-center ${isDark ? 'text-slate-200' : 'text-slate-700'}`}>Latest Blogs</h3>
-                            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                                {PORTFOLIO_DATA.blogs.map((item, index) => (
-                                    <GridCard key={index} item={item} type="blog" isDark={isDark} />
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section >
 
             {/* Social Section */}
             < section className={`py-24 ${isDark ? 'bg-slate-900' : 'bg-slate-50'}`}>
@@ -781,8 +763,8 @@ const Home = ({ isDark }) => {
                             }`}>
                             <p>© {new Date().getFullYear()} {PORTFOLIO_DATA.personal.name}. All rights reserved.</p>
                             <div className="flex gap-4 mt-4 md:mt-0">
-                                <a href={PORTFOLIO_DATA.personal.github} className={isDark ? "hover:text-cyan-400" : "hover:text-cyan-600"}>GitHub</a>
-                                <a href={PORTFOLIO_DATA.personal.linkedin} className={isDark ? "hover:text-cyan-400" : "hover:text-cyan-600"}>LinkedIn</a>
+                                <a href={PORTFOLIO_DATA.personal.github} target="_blank" rel="noopener noreferrer" className={isDark ? "hover:text-cyan-400" : "hover:text-cyan-600"}>GitHub</a>
+                                <a href={PORTFOLIO_DATA.personal.linkedin} target="_blank" rel="noopener noreferrer" className={isDark ? "hover:text-cyan-400" : "hover:text-cyan-600"}>LinkedIn</a>
                             </div>
                         </div>
                     </div>

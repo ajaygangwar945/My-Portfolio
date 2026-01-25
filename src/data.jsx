@@ -81,7 +81,7 @@ export const PORTFOLIO_DATA = {
             description: "A comprehensive data analysis workflow performing data cleaning, exploration, and visualization using Jupyter Notebooks.",
             tags: ["Python 3", "Jupyter Notebook", "Pandas", "Matplotlib / Seaborn"],
             github: "https://github.com/ajaygangwar945/Python-Data-Science-Project",
-            demo: "https://github.com/ajaygangwar945/Python-Data-Science-Project"
+            demo: "https://ajaygangwar945.github.io/Python-Data-Science-Project/"
         }
     ],
     achievements: [
@@ -148,15 +148,21 @@ export const PORTFOLIO_DATA = {
             fullDescription: "As a member of the Student Career Committee (SCC), I play a pivotal role in bridging the gap between students and the administration. My focus has been on enhancing the technical culture on campus by organizing impactful events and workshops.",
             events: [
                 {
-                    title: "Tech Week 2025",
-                    image: "/events/tech-week.jpg",
-                    description: "Organized a week-long series of coding challenges and tech talks."
+                    title: "Tech Innovation Summit 2025",
+                    image: "/events/summit.jpg",
+                    description: "Co-organized a 3-day summit featuring Vivek Sridhar (Microsoft) and Saurav Mittal. Honored with a medal for leadership and Event contribution."
                 },
                 {
-                    title: "Hackathon 2025",
+                    title: "TechFluence 5.0",
+                    image: "/events/tech-week.jpg",
+                    description: "Organized TechFluence 5.0 featuring speakers from Google, Meta, and BrandBuilders. Focused on innovation, adaptability, and meaningful problem-solving."
+                },
+                {
+                    title: "Product Management Summit 2025",
                     image: "/events/hackathon.jpg",
-                    description: "Coordinated the annual university hackathon with over 500 participants."
+                    description: "Hosted industry leaders from Rethink Systems and Zepto, gaining insights on product strategy, leadership, and innovation."
                 }
+
             ]
         },
         {
@@ -173,9 +179,14 @@ export const PORTFOLIO_DATA = {
             fullDescription: "Serving on the Hostel Committee allowed me to develop strong leadership and conflict resolution skills. I was responsible for the well-being of over 500 students, ensuring a comfortable and engaging living environment.",
             events: [
                 {
-                    title: "Cultural Night",
-                    image: "/events/cultural-night.jpg",
-                    description: "Organized a cultural night to celebrate diversity in the hostel."
+                    title: "Joy of Giving",
+                    image: "/events/joy-giving.jpg",
+                    description: "Collaborated with NSS to collect and distribute essentials, fostering empathy and community service."
+                },
+                {
+                    title: "Inter-Hostel Sports Tournament",
+                    image: "/events/sports.jpg",
+                    description: "Coordinated LPU Inter-Hostel Sports Tournaments, fostering teamwork and healthy competition among residents."
                 }
             ]
         },
@@ -193,9 +204,9 @@ export const PORTFOLIO_DATA = {
             fullDescription: "Participating in the IGC Model United Nations was an enriching experience that sharpened my public speaking, negotiation, and research skills. I engaged in intense debates on global issues and collaborated with delegates to draft resolutions.",
             events: [
                 {
-                    title: "IGC MUN Conference",
+                    title: "IGC MUN India 2024",
                     image: "/events/mun.jpg",
-                    description: "Represented my portfolio in the annual IGC MUN conference."
+                    description: "Organized the International Global Conference Model United Nations India 2024, managing logistics and events for national and international delegates."
                 }
             ]
         }
@@ -228,140 +239,14 @@ export const PORTFOLIO_DATA = {
             organization: "NPTEL",
             date: "Feb, 2025",
             image: "/nptel.png",
-            link: "#"
+            link: "https://drive.google.com/file/d/1gjxcSxIoeJkCGOZ1soOdwq0hej6ihmoC/view?usp=sharing"
         },
         {
             title: "Software Engineering",
             organization: "Coursera",
             date: "May, 2024",
             image: "/software.png",
-            link: "#"
-        },
-        {
-            title: "Software Engineering",
-            organization: "Coursera",
-            date: "May, 2024",
-            image: "/software.png",
-            link: "#"
-        },
-        {
-            title: "Software Engineering",
-            organization: "Coursera",
-            date: "May, 2024",
-            image: "/software.png",
-            link: "#"
-        },
-        {
-            title: "Software Engineering",
-            organization: "Udemy",
-            date: "May, 2024",
-            image: "/software.png",
-            link: "#"
-        },
-        {
-            title: "Software Engineering",
-            organization: "Udemy",
-            date: "May, 2024",
-            image: "/software.png",
-            link: "#"
-        },
-        {
-            title: "Software Engineering",
-            organization: "Udemy",
-            date: "May, 2024",
-            image: "/software.png",
-            link: "#"
-        },
-        {
-            title: "Software Engineering",
-            organization: "Udemy",
-            date: "May, 2024",
-            image: "/software.png",
-            link: "#"
-        },
-        {
-            title: "Software Engineering",
-            organization: "Udemy",
-            date: "May, 2024",
-            image: "/software.png",
-            link: "#"
-        },
-        {
-            title: "Software Engineering",
-            organization: "Udemy",
-            date: "May, 2024",
-            image: "/software.png",
-            link: "#"
-        },
-        {
-            title: "Software Engineering",
-            organization: "Udemy",
-            date: "May, 2024",
-            image: "/software.png",
-            link: "#"
-        },
-        {
-            title: "Software Engineering",
-            organization: "Udemy",
-            date: "May, 2024",
-            image: "/software.png",
-            link: "#"
-        },
-        {
-            title: "Software Engineering",
-            organization: "Udemy",
-            date: "May, 2024",
-            image: "/software.png",
-            link: "#"
-        },
-        {
-            title: "Software Engineering",
-            organization: "Udemy",
-            date: "May, 2024",
-            image: "/software.png",
-            link: "#"
-        },
-        {
-            title: "Software Engineering",
-            organization: "Udemy",
-            date: "May, 2024",
-            image: "/software.png",
-            link: "#"
-        },
-        {
-            title: "Software Engineering",
-            organization: "Udemy",
-            date: "May, 2024",
-            image: "/software.png",
-            link: "#"
-        },
-        {
-            title: "Software Engineering",
-            organization: "Udemy",
-            date: "May, 2024",
-            image: "/software.png",
-            link: "#"
-        },
-        {
-            title: "Software Engineering",
-            organization: "Udemy",
-            date: "May, 2024",
-            image: "/software.png",
-            link: "#"
-        },
-        {
-            title: "Software Engineering",
-            organization: "Udemy",
-            date: "May, 2024",
-            image: "/software.png",
-            link: "#"
-        },
-        {
-            title: "Software Engineering",
-            organization: "Udemy",
-            date: "May, 2024",
-            image: "/software.png",
-            link: "#"
+            link: "https://drive.google.com/file/d/1ZfN3j95W6HuIFe-32fPnCe5gO4TO86hv/view?usp=drive_link"
         }
     ],
     social: {
@@ -380,8 +265,8 @@ export const PORTFOLIO_DATA = {
 
 /* =============================================================================
   🧠 GEMINI API INTEGRATION
-  IMPORTANT: For local development, you must get a free API Key from 
-  https://aistudio.google.com/app/apikey and paste it below.
+  IMPORTANT: The API Key is now securely loaded from the .env file.
+  Do NOT paste your key here directly!
   =============================================================================
 */
 export const GeminiService = {
@@ -411,3 +296,4 @@ export const GeminiService = {
         }
     }
 };
+

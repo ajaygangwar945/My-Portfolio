@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { ArrowLeft, Calendar, Briefcase } from 'lucide-react';
+import { Calendar, Briefcase } from 'lucide-react';
 import { PORTFOLIO_DATA } from './data';
 import SectionTitle from './SectionTitle';
 
@@ -29,18 +29,6 @@ const PositionDetails = ({ isDark }) => {
     return (
         <div className={`min-h-screen pt-24 pb-12 ${isDark ? 'bg-slate-900' : 'bg-slate-50'}`}>
             <div className="container mx-auto px-6">
-                <div className="mb-8 flex justify-end">
-                    <Link
-                        to="/"
-                        className={`inline-flex items-center gap-2 px-4 py-2 rounded-full border font-medium transition-all ${isDark
-                            ? 'border-cyan-400 text-cyan-400 hover:bg-cyan-400/10'
-                            : 'border-cyan-600 text-cyan-600 hover:bg-cyan-50'
-                            }`}
-                    >
-                        <ArrowLeft size={20} /> Back to Home
-                    </Link>
-                </div>
-
                 <div className="max-w-4xl mx-auto">
                     <div className={`p-8 rounded-2xl border mb-12 ${isDark
                         ? 'bg-slate-800/50 border-slate-700'
@@ -81,9 +69,9 @@ const PositionDetails = ({ isDark }) => {
                     {position.events && position.events.length > 0 && (
                         <div>
                             <SectionTitle title="Events & Highlights" subtitle="Memorable moments and successful initiatives" isDark={isDark} />
-                            <div className="grid md:grid-cols-2 gap-6">
+                            <div className={`grid gap-6 ${position.events.length === 1 ? 'place-items-center' : 'md:grid-cols-2'}`}>
                                 {position.events.map((event, idx) => (
-                                    <div key={idx} className={`group rounded-xl overflow-hidden border transition-all hover:-translate-y-1 ${isDark
+                                    <div key={idx} className={`group rounded-xl overflow-hidden border transition-all hover:-translate-y-1 w-full max-w-md ${isDark
                                         ? 'bg-slate-800 border-slate-700 hover:border-cyan-500/50'
                                         : 'bg-white border-slate-200 hover:border-cyan-500/50 shadow-sm'
                                         }`}>

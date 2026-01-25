@@ -7,12 +7,12 @@ import {
     Sun,
     Moon
 } from 'lucide-react';
-import ChatBot from './ChatBot';
 import { PORTFOLIO_DATA } from './data';
 import Home from './Home';
 import AllProjects from './AllProjects';
 import AllCertificates from './AllCertificates';
 import PositionDetails from './PositionDetails';
+import ChatBot from './ChatBot';
 
 // NavLink Component
 const NavLink = ({ href, children, mobile, onClick, isDark }) => {
@@ -91,13 +91,13 @@ export default function App() {
 
                         {/* Desktop Menu */}
                         <div className="hidden md:flex gap-8 items-center">
+                            <NavLink href="/" isDark={isDark}>Home</NavLink>
                             <NavLink href="#about" isDark={isDark}>About</NavLink>
                             <NavLink href="#experience" isDark={isDark}>Experience</NavLink>
                             <NavLink href="#projects" isDark={isDark}>Projects</NavLink>
                             <NavLink href="#achievements" isDark={isDark}>Achievements</NavLink>
                             <NavLink href="#certificates" isDark={isDark}>Certificates</NavLink>
                             <NavLink href="#education" isDark={isDark}>Education</NavLink>
-                            <NavLink href="#content" isDark={isDark}>Content</NavLink>
 
                             {/* Theme Toggle */}
                             <button
@@ -134,13 +134,13 @@ export default function App() {
                     {isMenuOpen && (
                         <div className={`md:hidden absolute top-full left-0 w-full border-b py-4 px-6 flex flex-col gap-4 shadow-xl ${isDark ? 'bg-slate-800 border-slate-700' : 'bg-white border-slate-200'
                             }`}>
+                            <NavLink href="/" mobile isDark={isDark} onClick={() => setIsMenuOpen(false)}>Home</NavLink>
                             <NavLink href="#about" mobile isDark={isDark} onClick={() => setIsMenuOpen(false)}>About</NavLink>
                             <NavLink href="#experience" mobile isDark={isDark} onClick={() => setIsMenuOpen(false)}>Experience</NavLink>
                             <NavLink href="#projects" mobile isDark={isDark} onClick={() => setIsMenuOpen(false)}>Projects</NavLink>
                             <NavLink href="#achievements" mobile isDark={isDark} onClick={() => setIsMenuOpen(false)}>Achievements</NavLink>
                             <NavLink href="#certificates" mobile isDark={isDark} onClick={() => setIsMenuOpen(false)}>Certificates</NavLink>
                             <NavLink href="#education" mobile isDark={isDark} onClick={() => setIsMenuOpen(false)}>Education</NavLink>
-                            <NavLink href="#content" mobile isDark={isDark} onClick={() => setIsMenuOpen(false)}>Content</NavLink>
                             <NavLink href="#contact" mobile isDark={isDark} onClick={() => setIsMenuOpen(false)}>Contact</NavLink>
                         </div>
                     )}
@@ -156,6 +156,7 @@ export default function App() {
 
                 {/* ✨ GEMINI FEATURE 2: AI Chatbot ✨ */}
                 <ChatBot isDark={isDark} isOpen={isChatOpen} setIsOpen={setIsChatOpen} />
+
 
             </div>
         </BrowserRouter>
