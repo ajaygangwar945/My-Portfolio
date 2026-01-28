@@ -1,4 +1,5 @@
 <img src="public/Gemini_Generated_Image_dq6smpdq6smpdq6s.png" width="100%" height="300" align="center">
+
 <h1 align="center">🌐 Ajay Gangwar - Portfolio</h1>
 
 <div align="center">
