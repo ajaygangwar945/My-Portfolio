@@ -9,7 +9,6 @@
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=flat&logo=javascript&logoColor=black)
 ![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=flat&logo=python&logoColor=white)
 ![Gemini AI](https://img.shields.io/badge/Gemini_AI-API-4285F4?style=flat&logo=google-gemini&logoColor=white)
-
 [![Live Demo](https://img.shields.io/badge/Live-Demo-2ea44f?style=flat&logo=netlify&logoColor=white)](https://ajay-gangwar-portfolio.netlify.app/)
 [![Deployment](https://img.shields.io/badge/Deployed_on-Netlify-00C7B7?style=flat&logo=netlify&logoColor=white)](https://ajay-gangwar-portfolio.netlify.app/)
 [![Status](https://img.shields.io/badge/Status-Live-brightgreen?style=flat)](https://ajay-gangwar-portfolio.netlify.app/)
