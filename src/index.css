@@ -5,3 +5,21 @@
 html {
     scroll-behavior: smooth;
 }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0f172a; /* Slate-900 */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #06b6d4; /* Cyan-500 */
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #0891b2; /* Cyan-600 */
+}

@@ -94,6 +94,7 @@ export default function App() {
                             <NavLink href="/" isDark={isDark}>Home</NavLink>
                             <NavLink href="#about" isDark={isDark}>About</NavLink>
                             <NavLink href="#experience" isDark={isDark}>Experience</NavLink>
+                            <NavLink href="#positions" isDark={isDark}>Positions</NavLink>
                             <NavLink href="#projects" isDark={isDark}>Projects</NavLink>
                             <NavLink href="#achievements" isDark={isDark}>Achievements</NavLink>
                             <NavLink href="#certificates" isDark={isDark}>Certificates</NavLink>
@@ -137,6 +138,7 @@ export default function App() {
                             <NavLink href="/" mobile isDark={isDark} onClick={() => setIsMenuOpen(false)}>Home</NavLink>
                             <NavLink href="#about" mobile isDark={isDark} onClick={() => setIsMenuOpen(false)}>About</NavLink>
                             <NavLink href="#experience" mobile isDark={isDark} onClick={() => setIsMenuOpen(false)}>Experience</NavLink>
+                            <NavLink href="#positions" mobile isDark={isDark} onClick={() => setIsMenuOpen(false)}>Positions</NavLink>
                             <NavLink href="#projects" mobile isDark={isDark} onClick={() => setIsMenuOpen(false)}>Projects</NavLink>
                             <NavLink href="#achievements" mobile isDark={isDark} onClick={() => setIsMenuOpen(false)}>Achievements</NavLink>
                             <NavLink href="#certificates" mobile isDark={isDark} onClick={() => setIsMenuOpen(false)}>Certificates</NavLink>

@@ -9,28 +9,62 @@ import { Trophy, Cpu, Code } from 'lucide-react';
 export const PORTFOLIO_DATA = {
     personal: {
         name: "Ajay Gangwar",
-        role: "Computer Science Student & Data Science Enthusiast",
-        about: "Passionate CSE undergrad specializing in Data Science, ML, and Python. I thrive on building predictive models and transforming raw data into intelligent, actionable solutions.",
+        role: "Aspiring Data Scientist | Full Stack Developer | Problem Solver",
+        about: "Transforming raw data into intelligent, actionable insights. Specializing in Python, Machine Learning, and scalable Full Stack development to build solutions that bridge the gap between data and impact.",
         email: "ajaygangwar945@gmail.com",
         github: "https://github.com/ajaygangwar945",
         linkedin: "https://www.linkedin.com/in/ajaygangwar945/",
         resumeLink: "/resume.pdf",
-        profileImage: "/profile.jpg"
+        profileImage: "/profile.jpg",
+        fullBio: [
+            "My journey into the world of technology began with a curiosity about how data can predict the future. As a Computer Science student at Lovely Professional University, I've channeled that curiosity into mastering the art of Data Science and Full Stack Development.",
+            "I don't just write code; I build solutions. Whether it's architecting a secure backend for SoftHub or engineering real-time weather intelligence dashboards, my goal is always to create tools that are both technically sophisticated and user-centric.",
+            "When I'm not deep in a Jupyter Notebook or debugging a React component, you'll find me contributing to open-source communities or organizing technical summits to foster a culture of innovation on campus."
+        ],
+        mission: "To bridge the gap between raw data and human-centric solutions through elegant engineering and intelligent design."
     },
     skills: [
         "HTML", "CSS", "JavaScript", "Java", "Python", "C++", "React.js", "Node.js", "MongoDB", "SQL", "Git", "Docker", "AWS"
     ],
     stats: [
-        { label: "Projects Completed", value: "15+" },
-        { label: "LeetCode Solved", value: "100+" },
-        { label: "Hackathons Won", value: "2" },
-        { label: "Years Coding", value: "3" }
+        { label: "Technical Projects", value: "15+" },
+        { label: "Algorithms Solved", value: "100+" },
+        { label: "Hackathon Wins", value: "2" },
+        { label: "Years of Growth", value: "3+" }
     ],
     projects: [
+        {
+            title: "Global Terrorism Analysis",
+            description: "Interactive Power BI dashboard analyzing global terrorism trends using GTD with KPIs, Azure Maps, and drill-through analysis.",
+            tags: ["Power BI", "DAX", "Data Analytics", "Python"],
+            image: "/projects/global-terrorism.png",
+            github: "https://github.com/ajaygangwar945/Global-Terrorism-Analysis",
+            demo: "https://app.powerbi.com/view?r=eyJrIjoiNTY4YWQxMGItNGFhMC00ZWQ4LThlZjUtMDY0NWY4OGJkYjdhIiwidCI6ImUxNGU3M2ViLTUyNTEtNDM4OC04ZDY3LThmOWYyZTJkNWE0NiIsImMiOjEwfQ%3D%3D"
+        },
+        {
+            title: "SoftHub",
+            description: "Node.js & Express backend with secure authentication, MongoDB integration, and email-based OTP password reset.",
+            tags: ["Node.js", "Express", "MongoDB", "Authentication"],
+            image: "/projects/chat-app.png",
+            year: "2025",
+            github: "https://github.com/ajaygangwar945/SoftHub",
+            demo: "https://softhub-bwnd.onrender.com"
+        },
+        {
+            title: "Healthcare Interoperability",
+            description: "Platform integrating traditional Ayush systems with global standards (FHIR R4, ICD-11) for secure data exchange.",
+            tags: ["TypeScript", "Node.js", "FHIR", "Healthcare"],
+            image: "/projects/icd-mapping.png",
+            year: "2024",
+            github: "https://github.com/ajaygangwar945/SIH",
+            demo: "https://github.com/ajaygangwar945/SIH"
+        },
         {
             title: "AI-Powered Task Manager",
             description: "A smart todo list that prioritizes tasks using Natural Language Processing. Built with React and Python.",
             tags: ["React", "Python", "NLP", "FastAPI"],
+            image: "/projects/task-manager.png",
+            year: "2024",
             github: "#",
             demo: "#"
         },
@@ -38,6 +72,8 @@ export const PORTFOLIO_DATA = {
             title: "Blockchain Voting System",
             description: "Secure decentralized voting application ensuring transparency and anonymity using Ethereum smart contracts.",
             tags: ["Solidity", "Web3.js", "React", "Ethereum"],
+            image: "/projects/blockchain-voting.png",
+            year: "2024",
             github: "#",
             demo: "#"
         },
@@ -45,20 +81,25 @@ export const PORTFOLIO_DATA = {
             title: "Real-time Chat App",
             description: "A WebSocket-based messaging platform allowing instant communication with end-to-end encryption.",
             tags: ["Node.js", "Socket.io", "React", "Redis"],
+            image: "/projects/chat-app.png",
+            year: "2024",
             github: "#",
             demo: "#"
         },
         {
-            title: "Pet Adoption & Animal Welfare",
-            description: "A responsive platform facilitating pet adoption and welfare awareness through interactive listings",
+            title: "Pet Adoption Portal",
+            description: "Developed a responsive platform to facilitate pet adoption and raise welfare awareness through interactive listings and community resources.",
             tags: ["HTML", "CSS", "JavaScript"],
+            image: "/projects/pet-adoption.png",
+            year: "2023",
             github: "https://github.com/ajaygangwar945/Pet-Adoption-and-Animal-Welfare",
             demo: "https://pet-adoption-and-animal-welfare.netlify.app"
         },
         {
-            title: "Real-time Weather Forecasting App",
-            description: "Responsive weather dashboard featuring real-time data, geolocation, and animated visualizations via OpenWeatherMap.",
-            tags: ["React", "JavaScript", "OpenWeatherMap API", "CSS", "HTML 5"],
+            title: "Live Weather Intelligence",
+            description: "Engineered a real-time weather dashboard featuring geolocation-based forecasting and dynamic visualizations powered by the OpenWeatherMap API.",
+            tags: ["React", "JavaScript", "OpenWeatherMap API", "Tailwind CSS"],
+            image: "/projects/weather-app.png",
             github: "https://github.com/ajaygangwar945/Weather-App",
             demo: "https://weather-forcasting-temperature.netlify.app"
         },
@@ -66,6 +107,7 @@ export const PORTFOLIO_DATA = {
             title: "ICD-Mapping",
             description: "FHIR R4 compliant platform integrating Ayush systems with global healthcare standards using ICD-11 dual coding.",
             tags: ["Python", "FastAPI", "React", "Tailwind CSS"],
+            image: "/projects/icd-mapping.png",
             github: "https://github.com/ajaygangwar945/ICD-Mapping",
             demo: "https://icd-mapping.onrender.com"
         },
@@ -73,6 +115,7 @@ export const PORTFOLIO_DATA = {
             title: "ATS Resume Score",
             description: "AI-driven application using Google Gemini to analyze resumes and optimize alignment with job descriptions.",
             tags: ["Python", "Streamlit", "Google Gemini API"],
+            image: "/projects/ats-resume.png",
             github: "https://github.com/ajaygangwar945/ATS-Resume-Score",
             demo: "https://ats-resume-score-945.streamlit.app"
         },
@@ -80,6 +123,7 @@ export const PORTFOLIO_DATA = {
             title: "Python Data Science Project",
             description: "A comprehensive data analysis workflow performing data cleaning, exploration, and visualization using Jupyter Notebooks.",
             tags: ["Python 3", "Jupyter Notebook", "Pandas", "Matplotlib / Seaborn"],
+            image: "/projects/data-science.png",
             github: "https://github.com/ajaygangwar945/Python-Data-Science-Project",
             demo: "https://ajaygangwar945.github.io/Python-Data-Science-Project/"
         }
@@ -126,17 +170,17 @@ export const PORTFOLIO_DATA = {
             description: "Contributed to various open source projects including bug fixes and feature additions."
         },
         {
-            role: "Full Stack Developer Intern",
+            role: "Full Stack Development Intern",
             company: "Skillcraft Technology",
             year: "Summer 2025",
-            description: "Developed and maintained web applications using React and Node.js. Improved site performance by 20%."
+            description: "Architected and maintained performance-critical web applications using React and Node.js, achieving a 20% improvement in load times."
         }
 
     ],
     positions: [
         {
             id: "scc",
-            title: "Student Career Committee - SCC",
+            title: "Student Career Committee",
             role: "Member",
             date: "Sep, 2025 – Present",
             description: "Representing the student body and organizing technical events.",
@@ -250,16 +294,54 @@ export const PORTFOLIO_DATA = {
         }
     ],
     social: {
-        twitter: "https://twitter.com/ajaygangwar945",
-        twitterHandle: "@ajaygangwar945",
-        github: "https://github.com/ajaygangwar945",
-        linkedin: "https://www.linkedin.com/in/ajaygangwar945",
-        instagram: "https://instagram.com/ajaygangwar.945",
-        facebook: "https://facebook.com/ajaygangwar945",
-        discord: "https://discord.com/users/ajaygangwar945",
-        leetcode: "https://leetcode.com/ajaygangwar945",
-        codeforces: "https://codeforces.com/profile/ajaygangwar945",
-        kaggle: "https://kaggle.com/ajaygangwar945"
+        twitter: {
+            link: "https://twitter.com/ajaygangwar945",
+            title: "Latest Tweets",
+            content: "Sharing thoughts on the latest tech trends and my coding journey.",
+            action: "View on Twitter"
+        },
+        github: {
+            link: "https://github.com/ajaygangwar945",
+            title: "GitHub Activity",
+            content: "Active contributor and builder. Check out my latest repositories and code experiments.",
+            action: "View Profile"
+        },
+        linkedin: {
+            link: "https://www.linkedin.com/in/ajaygangwar945",
+            title: "Professional Network",
+            content: "Always open to collaborating on innovative projects and networking with peers.",
+            action: "Connect with me"
+        },
+        instagram: {
+            link: "https://instagram.com/ajaygangwar.945",
+            title: "Behind the Scenes",
+            content: "Snippet of my life outside of coding—travel, events, and personal growth moments.",
+            action: "Check Gallery"
+        },
+        leetcode: {
+            link: "https://leetcode.com/ajaygangwar945",
+            title: "Problem Solving",
+            content: "Consistently sharpening my logic and algorithm skills on LeetCode.",
+            action: "View Progress"
+        },
+        codeforces: {
+            link: "https://codeforces.com/profile/ajaygangwar945",
+            title: "Competitive Programming",
+            content: "Engaging in weekly challenges to push my competitive coding limits.",
+            action: "View Rating"
+        },
+        kaggle: {
+            link: "https://kaggle.com/ajaygangwar945",
+            title: "Data Science Hub",
+            content: "Diving deep into datasets and building machine learning models for real-world impact.",
+            action: "View Notebooks"
+        },
+        discord: {
+            link: "https://discord.com/users/ajaygangwar945",
+            title: "Developer Community",
+            content: "Let's connect and chat about code, projects, and new tech stacks!",
+            action: "Join Chat"
+        }
     }
 };
 
@@ -277,7 +359,7 @@ export const GeminiService = {
         // NOTE: If apiKey is empty, AI features will return a placeholder message.
         if (!apiKey) return "AI features require an API Key. Please add VITE_GEMINI_API_KEY to your .env file.";
 
-        const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
+        const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
 
         try {
             const response = await fetch(url, {

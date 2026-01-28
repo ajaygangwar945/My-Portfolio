@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
     Github,
@@ -14,12 +14,8 @@ import {
     Sparkles,
     MessageCircle,
     Loader2,
-    Briefcase,
-    BookOpen,
-    Mic,
     Twitter,
     Instagram,
-    Facebook,
     Database,
     Globe
 } from 'lucide-react';
@@ -250,36 +246,6 @@ const PositionTimelineItem = ({ position, isLast, isDark }) => (
     </div>
 );
 
-const GridCard = ({ item, type, isDark }) => (
-    <div className={`group p-6 rounded-xl border transition-all hover:-translate-y-1 hover:shadow-lg ${isDark
-        ? 'bg-slate-800/50 border-slate-700 hover:border-cyan-500/50'
-        : 'bg-white border-slate-200 hover:border-cyan-500/50 shadow-sm'
-        }`}>
-        <div className="flex justify-between items-start mb-4">
-            <div className={`p-3 rounded-lg ${isDark ? 'bg-slate-700/50 text-cyan-400' : 'bg-cyan-50 text-cyan-600'}`}>
-                {type === 'blog' && <BookOpen size={24} />}
-                {type === 'talk' && <Mic size={24} />}
-                {type === 'podcast' && <Briefcase size={24} />}
-            </div>
-            {item.link && (
-                <a href={item.link} target="_blank" rel="noopener noreferrer" className={`transition-colors ${isDark ? 'text-slate-400 hover:text-white' : 'text-slate-400 hover:text-slate-900'}`}>
-                    <ExternalLink size={20} />
-                </a>
-            )}
-        </div>
-        <h3 className={`text-lg font-bold mb-2 ${isDark ? 'text-white' : 'text-slate-800'}`}>
-            {item.title}
-        </h3>
-        {item.description && (
-            <p className={`text-sm mb-4 ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
-                {item.description}
-            </p>
-        )}
-        <div className={`text-xs font-medium ${isDark ? 'text-cyan-500' : 'text-cyan-600'}`}>
-            {item.date || item.event || item.show}
-        </div>
-    </div>
-);
 
 const SocialCard = ({ link, isDark, config }) => (
     <a
@@ -314,77 +280,34 @@ const SocialCard = ({ link, isDark, config }) => (
 
 
 const SocialSection = ({ data, isDark }) => {
-    const socialConfig = {
-        twitter: {
-            title: "Latest Tweets",
-            content: "\"Just shipped a new feature! 🚀 #coding #react\"",
-            action: "View on Twitter",
-            icon: <Twitter size={24} className={isDark ? "text-cyan-400" : "text-cyan-600"} />
-        },
-        github: {
-            title: "GitHub Activity",
-            content: "500+ contributions in the last year. Check out my latest repos!",
-            action: "View Profile",
-            icon: <Github size={24} className={isDark ? "text-cyan-400" : "text-cyan-600"} />
-        },
-        linkedin: {
-            title: "Professional Network",
-            content: "Let's connect and discuss potential opportunities and collaborations.",
-            action: "Connect with me",
-            icon: <Linkedin size={24} className={isDark ? "text-cyan-400" : "text-cyan-600"} />
-        },
-        instagram: {
-            title: "Latest Moments",
-            content: "Sharing my daily life, travel adventures, and coding setup.",
-            action: "Check Gallery",
-            icon: <Instagram size={24} className={isDark ? "text-cyan-400" : "text-cyan-600"} />
-        },
-        facebook: {
-            title: "Social Circle",
-            content: "Stay in touch with my personal updates and events.",
-            action: "Add Friend",
-            icon: <Facebook size={24} className={isDark ? "text-cyan-400" : "text-cyan-600"} />
-        },
-        discord: {
-            title: "Community Chat",
-            content: "Join our developer community server. Let's chat about code!",
-            action: "Join Server",
-            icon: <MessageCircle size={24} className={isDark ? "text-cyan-400" : "text-cyan-600"} />
-        },
-        leetcode: {
-            title: "Problem Solving",
-            content: "Solved 500+ problems. Consistent daily streak!",
-            action: "View Solutions",
-            icon: <Code size={24} className={isDark ? "text-cyan-400" : "text-cyan-600"} />
-        },
-        codeforces: {
-            title: "Competitive Prog.",
-            content: "Max Rating: 1600 (Specialist). Participating in weekly contests.",
-            action: "View Rating",
-            icon: <Terminal size={24} className={isDark ? "text-cyan-400" : "text-cyan-600"} />
-        },
-        kaggle: {
-            title: "Data Science",
-            content: "Exploring datasets and building ML models. 2x Silver Medalist.",
-            action: "View Notebooks",
-            icon: <Database size={24} className={isDark ? "text-cyan-400" : "text-cyan-600"} />
+    const getIcon = (platform) => {
+        const props = { size: 24, className: isDark ? "text-cyan-400" : "text-cyan-600" };
+        switch (platform) {
+            case 'twitter': return <Twitter {...props} />;
+            case 'github': return <Github {...props} />;
+            case 'linkedin': return <Linkedin {...props} />;
+            case 'instagram': return <Instagram {...props} />;
+            case 'leetcode': return <Code {...props} />;
+            case 'codeforces': return <Terminal {...props} />;
+            case 'kaggle': return <Database {...props} />;
+            case 'discord': return <MessageCircle {...props} />;
+            default: return <Globe {...props} size={24} />;
         }
     };
 
     return (
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {Object.entries(data).map(([platform, link]) => {
-                if (platform === 'twitterHandle' || !socialConfig[platform]) return null;
-                return (
-                    <SocialCard
-                        key={platform}
-                        platform={platform}
-                        link={link}
-                        isDark={isDark}
-                        config={socialConfig[platform]}
-                    />
-                );
-            })}
+            {Object.entries(data).map(([platform, config]) => (
+                <SocialCard
+                    key={platform}
+                    link={config.link}
+                    isDark={isDark}
+                    config={{
+                        ...config,
+                        icon: getIcon(platform)
+                    }}
+                />
+            ))}
         </div>
     );
 };
@@ -591,23 +514,50 @@ const Home = ({ isDark }) => {
                 </div>
             </section>
 
-            {/* About & Skills Section */}
+            {/* About Section */}
             <section id="about" className={`py-24 ${isDark ? 'bg-slate-900' : 'bg-slate-50'}`}>
                 <div className="container mx-auto px-6">
-                    <SectionTitle title="Technical Arsenal" subtitle="My toolkit for building digital experiences" isDark={isDark} />
+                    <SectionTitle title="About Me" subtitle="My journey and professional mission" isDark={isDark} />
 
-                    <div className="flex flex-wrap gap-4 justify-center max-w-4xl mx-auto">
-                        {PORTFOLIO_DATA.skills.map((skill, index) => (
-                            <span
-                                key={index}
-                                className={`px-6 py-3 rounded-lg border transition-all cursor-default select-none text-lg ${isDark
-                                    ? 'bg-slate-800 text-slate-300 border-slate-700 hover:border-cyan-500 hover:text-cyan-400'
-                                    : 'bg-white text-slate-700 border-slate-200 hover:border-cyan-600 hover:text-cyan-600 shadow-sm'
-                                    }`}
-                            >
-                                {skill}
-                            </span>
-                        ))}
+                    <div className="grid lg:grid-cols-2 gap-16 items-start max-w-6xl mx-auto">
+                        {/* Narrative Side */}
+                        <div className="space-y-8">
+                            <div className={`p-8 rounded-2xl border-l-4 border-cyan-500 ${isDark ? 'bg-slate-800/40 text-slate-300' : 'bg-white text-slate-600 shadow-sm'}`}>
+                                <h3 className={`text-2xl font-bold mb-6 ${isDark ? 'text-white' : 'text-slate-900'}`}>My Story</h3>
+                                <div className="space-y-4 text-lg leading-relaxed text-pretty">
+                                    {PORTFOLIO_DATA.personal.fullBio?.map((paragraph, i) => (
+                                        <p key={i}>{paragraph}</p>
+                                    ))}
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        {/* Skills Side */}
+                        <div className="space-y-8">
+                            <h3 className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-slate-900'}`}>Technical Arsenal</h3>
+                            <div className="flex flex-wrap gap-3">
+                                {PORTFOLIO_DATA.skills.map((skill, index) => (
+                                    <span
+                                        key={index}
+                                        className={`px-5 py-2.5 rounded-xl border transition-all cursor-default select-none text-base font-medium ${isDark
+                                            ? 'bg-slate-800 text-slate-300 border-slate-700 hover:border-cyan-500 hover:text-cyan-400'
+                                            : 'bg-white text-slate-700 border-slate-200 hover:border-cyan-600 hover:text-cyan-600 shadow-sm'
+                                            }`}
+                                    >
+                                        {skill}
+                                    </span>
+                                ))}
+                            </div>
+
+                            {/* Decorative element */}
+                            <div className={`mt-8 p-6 rounded-2xl border-2 border-dashed ${isDark ? 'border-slate-700 bg-slate-800/20' : 'border-slate-200 bg-slate-50'}`}>
+                                <p className={`text-sm italic ${isDark ? 'text-slate-500' : 'text-slate-400'}`}>
+                                    &quot;I believe in continuous learning and the power of collaborative innovation. Every project is an opportunity to push the boundaries of what&apos;s possible.&quot;
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
