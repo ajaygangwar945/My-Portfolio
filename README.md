@@ -1,4 +1,4 @@
-<img src="public/Gemini_Generated_Image_dq6smpdq6smpdq6s.png" width="100%" height="300" align="center">
+<img src="public/Gemini_Generated_Image_dq6smpdq6smpdq6s.png" width="100%" height="200" style="object-fit: cover" align="center">
 
 <h1 align="center">🌐 Ajay Gangwar - Portfolio</h1>
 
