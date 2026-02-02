@@ -86,17 +86,21 @@ AI-driven application using Google Gemini to optimize resumes for job descriptio
 ```bash
 my-portfolio/
 ├── public/                 # Static assets (images, icons, resume)
-│   ├── projects/           # High-res project screenshots
-│   └── resume.pdf          # Professional CV
+│   ├── projects/           # Project screenshots
+│   ├── events/             # Event photos
+│   ├── resume.pdf          # Professional CV
+│   └── favicon.svg         # Site favicon
 ├── src/                    # Application source code
-│   ├── components/         # Reusable UI components
-│   ├── App.jsx            # Core routing and state management
-│   ├── data.jsx           # Centralized portfolio content
-│   └── index.css          # Global Tailwind styles & injections
-├── .env                    # Environment variables (API keys)
-├── package.json            # Project dependencies
-├── tailwind.config.js      # Style configurations
-└── vite.config.js         # Build tool configurations
+│   ├── App.jsx            # Core application logic & routing
+│   ├── Home.jsx           # Main landing page component
+│   ├── ChatBot.jsx        # AI-powered assistant interface
+│   ├── data.jsx           # Centralized portfolio data (Single Source of Truth)
+│   ├── ProjectCard.jsx    # Reusable project showcase component
+│   ├── AllProjects.jsx    # Complete projects gallery
+│   └── index.css          # Global styles & Tailwind injections
+├── .env                    # Configuration for API Keys
+├── tailwind.config.js      # Tailwind CSS configuration
+└── vite.config.js         # Vite build configuration
 ```
 
 ---
