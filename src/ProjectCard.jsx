@@ -7,7 +7,7 @@ const ProjectCard = ({ project, isDark }) => (
         : 'bg-white border-slate-200 hover:border-cyan-500/50 hover:shadow-cyan-500/10 shadow-sm'
         }`}>
         {project.image && (
-            <div className="h-48 overflow-hidden relative">
+            <div className="h-40 sm:h-48 overflow-hidden relative">
                 <div className={`absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent z-10 transition-opacity duration-300 ${isDark ? 'opacity-60' : 'opacity-30'}`}></div>
                 <img
                     src={project.image}
@@ -21,8 +21,8 @@ const ProjectCard = ({ project, isDark }) => (
         )}
         <div className="p-6">
             <div className="flex justify-between items-start mb-4">
-                <div className={`p-3 rounded-lg transition-colors ${isDark ? 'bg-slate-700/50 group-hover:bg-cyan-500/20' : 'bg-slate-100 group-hover:bg-cyan-50'}`}>
-                    <Code className={isDark ? "text-cyan-400" : "text-cyan-600"} size={24} />
+                <div className={`p-2 sm:p-3 rounded-lg transition-colors ${isDark ? 'bg-slate-700/50 group-hover:bg-cyan-500/20' : 'bg-slate-100 group-hover:bg-cyan-50'}`}>
+                    <Code className={isDark ? "text-cyan-400" : "text-cyan-600"} size={20} />
                 </div>
                 <div className="flex gap-3">
                     <a
@@ -31,7 +31,7 @@ const ProjectCard = ({ project, isDark }) => (
                         rel="noopener noreferrer"
                         className={`${isDark ? 'text-slate-400 hover:text-white' : 'text-slate-400 hover:text-slate-900'} transition-colors`}
                     >
-                        <Github size={20} />
+                        <Github size={18} />
                     </a>
                     <a
                         href={project.demo}
@@ -39,7 +39,7 @@ const ProjectCard = ({ project, isDark }) => (
                         rel="noopener noreferrer"
                         className={`${isDark ? 'text-slate-400 hover:text-white' : 'text-slate-400 hover:text-slate-900'} transition-colors`}
                     >
-                        <Globe size={20} />
+                        <Globe size={18} />
                     </a>
                 </div>
             </div>

@@ -1,4 +1,3 @@
-import React from 'react';
 import { ExternalLink, FileText, Award } from 'lucide-react';
 
 const CertificateCard = ({ certificate, isDark }) => {
@@ -9,7 +8,7 @@ const CertificateCard = ({ certificate, isDark }) => {
             ? 'bg-slate-800 border-slate-700 hover:border-cyan-500/50 hover:shadow-cyan-500/10'
             : 'bg-white border-slate-200 hover:border-cyan-500/50 hover:shadow-cyan-500/10 shadow-sm'
             }`}>
-            <div className="relative h-48 overflow-hidden">
+            <div className="relative h-40 sm:h-48 overflow-hidden">
                 <img
                     src={certificate.image || '/certificate-placeholder.jpg'}
                     alt={certificate.title || 'Certificate'}
@@ -22,7 +21,7 @@ const CertificateCard = ({ certificate, isDark }) => {
                     }}
                 />
                 <div className={`hidden absolute inset-0 items-center justify-center ${isDark ? 'bg-slate-800' : 'bg-slate-100'}`}>
-                    <FileText className={isDark ? "text-cyan-400" : "text-cyan-600"} size={64} />
+                    <FileText className={isDark ? "text-cyan-400" : "text-cyan-600"} size={48} />
                 </div>
             </div>
             <div className="p-6">

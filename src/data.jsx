@@ -34,30 +34,103 @@ export const PORTFOLIO_DATA = {
     ],
     projects: [
         {
+            title: "Portfolio Hub",
+            description: "A premium multi-portfolio hub featuring 16 technology portals with glassmorphic UI, 3D visuals, and interactive data dashboards. Built using HTML, CSS, JavaScript, and Three.js.",
+            tags: ["HTML5", "CSS3", "JavaScript", "Three.js", "Glassmorphism", "Vercel"],
+            image: "/projects/portfolio-hub.png",
+            year: "2026",
+            github: "https://github.com/ajaygangwar945/Portfolio-Hub",
+            demo: "https://ajay-portfolio-hub.vercel.app"
+        },
+        {
+            title: "Stylish Achievements",
+            description: "A modern, interactive portfolio built with React, TypeScript, and 3D web technologies to showcase achievements through immersive design and smooth user experiences.",
+            tags: ["React", "TypeScript", "Tailwind CSS", "Vite", "3D Web", "Shadcn UI"],
+            image: "/projects/stylish-achievements.png",
+            year: "2025",
+            github: "https://github.com/ajaygangwar945/Stylish-Achievements",
+            demo: "https://stylish-achievements.vercel.app/"
+        },
+        {
+            title: "Cyber Warfare Intrusion Detection",
+            description: "A machine learning–based intrusion detection system for cyber warfare scenarios that detects and classifies malicious network traffic (DDoS, probing, malware, unauthorized access) using supervised ML algorithms.",
+            tags: ["Python", "Machine Learning", "Scikit-learn", "Cybersecurity", "FastAPI"],
+            image: "/projects/cyber-warfare.png",
+            year: "2025",
+            github: "https://github.com/ajaygangwar945/Cyber-Warfare-Intrusion-Detection",
+            demo: "https://cyber-warfare-intrusion-detection.onrender.com/"
+        },
+        {
+            title: "Rainfall Data Analysis",
+            description: "Comprehensive Rainfall EDA & Machine Learning project. Built with Python (Pandas/Scikit-learn) and a premium web dashboard using Three.js and Chart.js.",
+            tags: ["Python", "Data Science", "Pandas", "Scikit-learn", "Three.js", "Chart.js"],
+            image: "/projects/rainfall-analysis.png",
+            year: "2025",
+            github: "https://github.com/ajaygangwar945/Rainfall-Data-Analysis-Project",
+            demo: "https://ajaygangwar945.github.io/Rainfall-Data-Analysis-Project/"
+        },
+        {
             title: "Global Terrorism Analysis",
             description: "Interactive Power BI dashboard analyzing global terrorism trends using GTD with KPIs, Azure Maps, and drill-through analysis.",
             tags: ["Power BI", "DAX", "Data Analytics", "Python"],
             image: "/projects/global-terrorism.png",
+            year: "2025",
             github: "https://github.com/ajaygangwar945/Global-Terrorism-Analysis",
             demo: "https://app.powerbi.com/view?r=eyJrIjoiNTY4YWQxMGItNGFhMC00ZWQ4LThlZjUtMDY0NWY4OGJkYjdhIiwidCI6ImUxNGU3M2ViLTUyNTEtNDM4OC04ZDY3LThmOWYyZTJkNWE0NiIsImMiOjEwfQ%3D%3D"
-        },
-        {
-            title: "SoftHub",
-            description: "Node.js & Express backend with secure authentication, MongoDB integration, and email-based OTP password reset.",
-            tags: ["Node.js", "Express", "MongoDB", "Authentication"],
-            image: "/projects/chat-app.png",
-            year: "2025",
-            github: "https://github.com/ajaygangwar945/SoftHub",
-            demo: "https://softhub-bwnd.onrender.com"
         },
         {
             title: "Healthcare Interoperability",
             description: "Platform integrating traditional Ayush systems with global standards (FHIR R4, ICD-11) for secure data exchange.",
             tags: ["TypeScript", "Node.js", "FHIR", "Healthcare"],
             image: "/projects/icd-mapping.png",
-            year: "2024",
+            year: "2025",
             github: "https://github.com/ajaygangwar945/SIH",
-            demo: "https://github.com/ajaygangwar945/SIH"
+            demo: "https://sih-ayush-fhir.vercel.app/"
+        },
+        {
+            title: "ICD-Mapping",
+            description: "FHIR R4 compliant platform integrating Ayush systems with global healthcare standards using ICD-11 dual coding.",
+            tags: ["Python", "FastAPI", "React", "Tailwind CSS"],
+            image: "/projects/icd-mapping.png",
+            year: "2025",
+            github: "https://github.com/ajaygangwar945/ICD-Mapping",
+            demo: "https://icd-mapping.onrender.com"
+        },
+        {
+            title: "ATS Resume Score",
+            description: "AI-driven application using Google Gemini to analyze resumes and optimize alignment with job descriptions.",
+            tags: ["Python", "Streamlit", "Google Gemini API"],
+            image: "/projects/ats-resume.png",
+            year: "2025",
+            github: "https://github.com/ajaygangwar945/ATS-Resume-Score",
+            demo: "https://ats-resume-score-945.streamlit.app"
+        },
+        {
+            title: "SoftHub",
+            description: "Node.js & Express backend with secure authentication, MongoDB integration, and email-based OTP password reset.",
+            tags: ["Node.js", "Express", "MongoDB", "Authentication"],
+            image: "/projects/chat-app.png",
+            year: "2024",
+            github: "https://github.com/ajaygangwar945/SoftHub",
+            demo: "https://softhub-bwnd.onrender.com"
+        },
+        {
+            title: "Live Weather Intelligence",
+            description: "Engineered a real-time weather dashboard featuring geolocation-based forecasting and dynamic visualizations powered by the OpenWeatherMap API.",
+            tags: ["React", "JavaScript", "OpenWeatherMap API", "Tailwind CSS"],
+            image: "/projects/weather-app.png",
+            year: "2024",
+            github: "https://github.com/ajaygangwar945/Weather-App",
+            demo: "https://weather-forcasting-temperature.netlify.app"
+        },
+        {
+            title: "Pet Adoption Portal",
+            description: "Developed a responsive platform to facilitate pet adoption and raise welfare awareness through interactive listings and community resources.",
+            tags: ["HTML", "CSS", "JavaScript"],
+            image: "/projects/pet-adoption.png",
+            year: "2023",
+            github: "https://github.com/ajaygangwar945/Pet-Adoption-and-Animal-Welfare",
+            demo: "https://pet-adoption-and-animal-welfare.netlify.app"
         },
         {
             title: "AI-Powered Task Manager",
@@ -86,47 +159,6 @@ export const PORTFOLIO_DATA = {
             github: "#",
             demo: "#"
         },
-        {
-            title: "Pet Adoption Portal",
-            description: "Developed a responsive platform to facilitate pet adoption and raise welfare awareness through interactive listings and community resources.",
-            tags: ["HTML", "CSS", "JavaScript"],
-            image: "/projects/pet-adoption.png",
-            year: "2023",
-            github: "https://github.com/ajaygangwar945/Pet-Adoption-and-Animal-Welfare",
-            demo: "https://pet-adoption-and-animal-welfare.netlify.app"
-        },
-        {
-            title: "Live Weather Intelligence",
-            description: "Engineered a real-time weather dashboard featuring geolocation-based forecasting and dynamic visualizations powered by the OpenWeatherMap API.",
-            tags: ["React", "JavaScript", "OpenWeatherMap API", "Tailwind CSS"],
-            image: "/projects/weather-app.png",
-            github: "https://github.com/ajaygangwar945/Weather-App",
-            demo: "https://weather-forcasting-temperature.netlify.app"
-        },
-        {
-            title: "ICD-Mapping",
-            description: "FHIR R4 compliant platform integrating Ayush systems with global healthcare standards using ICD-11 dual coding.",
-            tags: ["Python", "FastAPI", "React", "Tailwind CSS"],
-            image: "/projects/icd-mapping.png",
-            github: "https://github.com/ajaygangwar945/ICD-Mapping",
-            demo: "https://icd-mapping.onrender.com"
-        },
-        {
-            title: "ATS Resume Score",
-            description: "AI-driven application using Google Gemini to analyze resumes and optimize alignment with job descriptions.",
-            tags: ["Python", "Streamlit", "Google Gemini API"],
-            image: "/projects/ats-resume.png",
-            github: "https://github.com/ajaygangwar945/ATS-Resume-Score",
-            demo: "https://ats-resume-score-945.streamlit.app"
-        },
-        {
-            title: "Python Data Science Project",
-            description: "A comprehensive data analysis workflow performing data cleaning, exploration, and visualization using Jupyter Notebooks.",
-            tags: ["Python 3", "Jupyter Notebook", "Pandas", "Matplotlib / Seaborn"],
-            image: "/projects/data-science.png",
-            github: "https://github.com/ajaygangwar945/Python-Data-Science-Project",
-            demo: "https://ajaygangwar945.github.io/Python-Data-Science-Project/"
-        }
     ],
     achievements: [
         {
@@ -172,7 +204,7 @@ export const PORTFOLIO_DATA = {
         {
             role: "Full Stack Development Intern",
             company: "Skillcraft Technology",
-            year: "Summer 2025",
+            year: "Jun 2025 - Aug 2025",
             description: "Architected and maintained performance-critical web applications using React and Node.js, achieving a 20% improvement in load times."
         }
 

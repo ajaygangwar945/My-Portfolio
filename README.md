@@ -1,18 +1,18 @@
-<img src="public/Gemini_Generated_Image_dq6smpdq6smpdq6s.png" width="100%" height="200" style="object-fit: cover" align="center">
+<img src="public/Gemini_Generated_Image_dq6smpdq6smpdq6s.png" width="100%" height="200" style="object-fit: cover" align="center" alt="Ajay Gangwar Portfolio Banner">
 
 <h1 align="center">🌐 Ajay Gangwar - Portfolio</h1>
 
 <div align="center">
 
-![React](https://img.shields.io/badge/React-18.x-61DAFB?style=flat&logo=react&logoColor=black)
-![Vite](https://img.shields.io/badge/Vite-5.x-646CFF?style=flat&logo=vite&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.x-38B2AC?style=flat&logo=tailwind-css&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=flat&logo=javascript&logoColor=black)
-![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=flat&logo=python&logoColor=white)
-![Gemini AI](https://img.shields.io/badge/Gemini_AI-API-4285F4?style=flat&logo=google-gemini&logoColor=white)
-[![Live Demo](https://img.shields.io/badge/Live-Demo-2ea44f?style=flat&logo=netlify&logoColor=white)](https://ajay-gangwar-portfolio.netlify.app/)
-[![Deployment](https://img.shields.io/badge/Deployed_on-Netlify-00C7B7?style=flat&logo=netlify&logoColor=white)](https://ajay-gangwar-portfolio.netlify.app/)
-[![Status](https://img.shields.io/badge/Status-Live-brightgreen?style=flat)](https://ajay-gangwar-portfolio.netlify.app/)
+[![React](https://img.shields.io/badge/React-18.x-61DAFB?style=flat&logo=react&logoColor=black)](https://reactjs.org/ "Link to React Documentation")
+[![Vite](https://img.shields.io/badge/Vite-5.x-646CFF?style=flat&logo=vite&logoColor=white)](https://vitejs.dev/ "Link to Vite Documentation")
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.x-38B2AC?style=flat&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/ "Link to Tailwind CSS Documentation")
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=flat&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript "Link to JavaScript Documentation")
+[![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/ "Link to Python Documentation")
+[![Gemini AI](https://img.shields.io/badge/Gemini_AI-API-4285F4?style=flat&logo=google-gemini&logoColor=white)](https://ai.google.dev/ "Link to Gemini AI Documentation")
+[![Live Demo](https://img.shields.io/badge/Live-Demo-2ea44f?style=flat&logo=netlify&logoColor=white)](https://ajay-gangwar-portfolio.netlify.app/ "View Live Portfolio")
+[![Deployment](https://img.shields.io/badge/Deployed_on-Netlify-00C7B7?style=flat&logo=netlify&logoColor=white)](https://ajay-gangwar-portfolio.netlify.app/ "Deployment Status")
+[![Status](https://img.shields.io/badge/Status-Live-brightgreen?style=flat)](https://ajay-gangwar-portfolio.netlify.app/ "Project is Live")
 
 </div>
 
@@ -28,9 +28,9 @@ I am an <b>Aspiring Data Scientist</b> and <b>Full Stack Developer</b> passionat
 
 ## 🚀 Key Features
 
-- 🤖 **AI ChatBot Assistant**: Interactive, markdown-rendered chat powered by Google Gemini AI, trained on my professional background.
-- 💡 **AI Project Idea Generator**: Unique tool that generates creative coding ideas tailored to specific skill sets.
-- 📱 **Responsive & Modern UI**: Built with a "mobile-first" approach using Tailwind CSS for a seamless experience across all devices.
+- 🤖 **AI ChatBot Assistant**: Interactive, markdown-rendered chat powered by **Google Gemini 1.5 Flash**, trained on my professional background.
+- 💡 **AI Project Idea Generator**: Unique tool that generates creative coding ideas tailored to specific skill sets and technologies.
+- 📱 **Responsive & Modern UI**: Built with a "mobile-first" approach using **Tailwind CSS** for a seamless experience across all devices.
 - 🌓 **Dark/Light Mode**: User-controlled theme switching with persistent preferences.
 - 📊 **Interactive Dashboards**: Integrated visualization of technical skills and achievements.
 
@@ -38,20 +38,16 @@ I am an <b>Aspiring Data Scientist</b> and <b>Full Stack Developer</b> passionat
 
 ## 🛠️ Tech Stack
 
-### Frontend & Core
+### **Frontend & Visuals**
 
-- **React.js**: Modern component-based architecture.
-- **Tailwind CSS**: Utility-first styling for high-fidelity designs.
-- **Vite**: Ultra-fast build tool and development server.
-- **Lucide React**: Clean, consistent iconography.
+- **React.js**: Robust component-based architecture for dynamic SPAs.
+- **Tailwind CSS**: Utility-first styling for a custom, premium design system.
+- **Vite**: Next-generation frontend tooling for ultra-fast development.
+- **Lucide React**: High-quality, consistent iconography.
 
-### AI & Backend (Integration)
+### **AI & Data Science**
 
-- **Google Gemini 1.5 Flash**: Orchestrating intelligent responses and creative generation.
-- **Netlify**: Serverless deployment with integrated form handling for the Contact section.
-
-### Languages & Data Science
-
+- **Google Gemini API**: Powering intelligent chat and creative idea generation.
 - **Python / SQL**: Core languages for data manipulation and analysis.
 - **Power BI / DAX**: Advanced data visualization and business intelligence reporting.
 
@@ -61,51 +57,42 @@ I am an <b>Aspiring Data Scientist</b> and <b>Full Stack Developer</b> passionat
 
 ### [Global Terrorism Analysis](https://github.com/ajaygangwar945/Global-Terrorism-Analysis)
 
-Interactive Power BI dashboard analyzing global terrorism trends using GTD with KPIs, Azure Maps, and drill-through analysis.
+Interactive Power BI dashboard analyzing global terrorism trends with KPIs and Azure Maps.
 *Tech: Power BI, DAX, Data Analytics, Python*
 
 ### [SoftHub](https://softhub-bwnd.onrender.com)
 
-Node.js & Express backend with secure authentication, MongoDB integration, and email-based OTP password reset.
+Node.js & Express backend with secure authentication, MongoDB integration, and email-based OTP reset.
 *Tech: Node.js, Express, MongoDB, Authentication*
 
 ### [ATS Resume Score](https://ats-resume-score-945.streamlit.app)
 
-AI-driven application using Google Gemini to analyze resumes and optimize alignment with job descriptions.
+AI-driven application using Google Gemini to optimize resumes for job descriptions.
 *Tech: Python, Streamlit, Google Gemini API*
-
-### [Live Weather Intelligence](https://weather-forcasting-temperature.netlify.app)
-
-Real-time weather dashboard featuring geolocation-based forecasting powered by OpenWeatherMap API.
-*Tech: React, OpenWeatherMap API, Tailwind CSS*
 
 ---
 
 ## 🏆 Achievements & Education
 
-- 🎓 **B.Tech in Computer Science** - Lovely Professional University (Specializing in Data Science)
-- 🥈 **Runner-up** - BlockseBlock Hackathon 2025 (National Level)
-- 🏅 **5th Place** - Code Hunt 2025 (IIT Ropar)
-- ⭐ **5 Star Coder** - HackerRank (Problem Solving & Data Structures)
+- 🎓 **B.Tech in Computer Science** — Lovely Professional University (Specializing in Data Science)
+- 🥈 **Runner-up** — BlockseBlock Hackathon 2025 (National Level)
+- 🏅 **5th Place** — Code Hunt 2025 (IIT Ropar)
+- ⭐ **5 Star Coder** — HackerRank (Problem Solving & Data Structures)
 
 ---
 
 ## 📂 Project Structure
 
-```text
+```bash
 my-portfolio/
 ├── public/                 # Static assets (images, icons, resume)
-│   ├── projects/           # Project screenshots
-│   ├── events/             # Event photos
-│   └── favicon.svg         # Site favicon
+│   ├── projects/           # High-res project screenshots
+│   └── resume.pdf          # Professional CV
 ├── src/                    # Application source code
-│   ├── AllCertificates.jsx # Certificate listing page
-│   ├── AllProjects.jsx    # Project gallery page
-│   ├── App.jsx            # Base application & routing
-│   ├── ChatBot.jsx        # AI Chat interface
-│   ├── Home.jsx           # Main landing page
+│   ├── components/         # Reusable UI components
+│   ├── App.jsx            # Core routing and state management
 │   ├── data.jsx           # Centralized portfolio content
-│   └── index.css          # Global Tailwind styles
+│   └── index.css          # Global Tailwind styles & injections
 ├── .env                    # Environment variables (API keys)
 ├── package.json            # Project dependencies
 ├── tailwind.config.js      # Style configurations
@@ -150,7 +137,7 @@ The project is fully deployed and accessible online.
 
 <div align="left">
 
-[![Deployment](https://img.shields.io/badge/Deployed_on-Netlify-00C7B7?style=flat&logo=netlify&logoColor=white)](https://ajay-gangwar-portfolio.netlify.app/)
+[![Deployment](https://img.shields.io/badge/Deployed_on-Netlify-00C7B7?style=flat&logo=netlify&logoColor=white)](https://ajay-gangwar-portfolio.netlify.app/ "View Deployment on Netlify")
 
 </div>
 
@@ -160,10 +147,10 @@ The project is fully deployed and accessible online.
 
 <div align="left">
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ajaygangwar945/)
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/ajaygangwar945)
-[![LeetCode](https://img.shields.io/badge/LeetCode-FFA116?style=flat&logo=leetcode&logoColor=black)](https://leetcode.com/ajaygangwar945)
-[![Kaggle](https://img.shields.io/badge/Kaggle-20BEFF?style=flat&logo=kaggle&logoColor=white)](https://kaggle.com/ajaygangwar945)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ajaygangwar945/ "Connect on LinkedIn")
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/ajaygangwar945 "View Portfolio GitHub")
+[![LeetCode](https://img.shields.io/badge/LeetCode-FFA116?style=flat&logo=leetcode&logoColor=black)](https://leetcode.com/ajaygangwar945 "Profile on LeetCode")
+[![Kaggle](https://img.shields.io/badge/Kaggle-20BEFF?style=flat&logo=kaggle&logoColor=white)](https://kaggle.com/ajaygangwar945 "Profile on Kaggle")
 
 </div>
 

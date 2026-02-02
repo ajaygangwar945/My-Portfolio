@@ -441,8 +441,8 @@ const Home = ({ isDark }) => {
                 <div className={`absolute top-20 right-0 w-96 h-96 rounded-full blur-3xl opacity-50 animate-pulse ${isDark ? 'bg-blue-600/20' : 'bg-blue-400/20'}`}></div>
                 <div className={`absolute bottom-0 left-0 w-72 h-72 rounded-full blur-3xl opacity-50 ${isDark ? 'bg-cyan-500/10' : 'bg-cyan-400/20'}`}></div>
 
-                <div className="container mx-auto px-6 relative z-10 text-center md:text-left">
-                    <div className="flex flex-col md:flex-row items-center gap-12">
+                <div className="container mx-auto px-6 relative z-10 text-center md:text-left pt-6 sm:pt-0">
+                    <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
                         <div className="flex-1 space-y-6">
                             <div className={`inline-block px-3 py-1 border rounded-full text-sm font-medium mb-4 ${isDark
                                 ? 'bg-slate-800 border-slate-700 text-cyan-400'
@@ -450,10 +450,10 @@ const Home = ({ isDark }) => {
                                 }`}>
                                 👋 Hello World, I&apos;m
                             </div>
-                            <h1 className={`text-5xl md:text-7xl font-bold leading-tight ${isDark ? 'text-white' : 'text-slate-900'}`}>
+                            <h1 className={`text-4xl sm:text-5xl md:text-7xl font-bold leading-tight ${isDark ? 'text-white' : 'text-slate-900'}`}>
                                 {PORTFOLIO_DATA.personal.name}
                             </h1>
-                            <h2 className={`text-2xl md:text-3xl font-light ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
+                            <h2 className={`text-xl sm:text-2xl md:text-3xl font-light ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
                                 {PORTFOLIO_DATA.personal.role}
                             </h2>
                             <p className={`max-w-xl text-lg leading-relaxed mx-auto md:mx-0 ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
@@ -490,18 +490,18 @@ const Home = ({ isDark }) => {
                                 <img
                                     src={PORTFOLIO_DATA.personal.profileImage}
                                     alt={PORTFOLIO_DATA.personal.name}
-                                    className={`relative w-64 h-64 mx-auto object-cover rounded-full border-4 shadow-2xl transition-transform group-hover:scale-105 ${isDark ? 'border-slate-800' : 'border-white'}`}
+                                    className={`relative w-48 h-48 sm:w-64 sm:h-64 mx-auto object-cover rounded-full border-4 shadow-2xl transition-transform group-hover:scale-105 ${isDark ? 'border-slate-800' : 'border-white'}`}
                                 />
                             </div>
 
-                            <div className="grid grid-cols-2 gap-4">
+                            <div className="grid grid-cols-2 gap-3 sm:gap-4">
                                 {PORTFOLIO_DATA.stats.map((stat, idx) => (
-                                    <div key={idx} className={`border p-6 rounded-2xl backdrop-blur-sm transition-all ${isDark
+                                    <div key={idx} className={`border p-4 sm:p-6 rounded-2xl backdrop-blur-sm transition-all ${isDark
                                         ? 'bg-slate-800/50 border-slate-700 hover:bg-slate-800'
                                         : 'bg-white/60 border-slate-200 hover:bg-white shadow-sm'
                                         }`}>
-                                        <h3 className={`text-3xl font-bold mb-1 ${isDark ? 'text-white' : 'text-slate-900'}`}>{stat.value}</h3>
-                                        <p className={`text-sm ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>{stat.label}</p>
+                                        <h3 className={`text-2xl sm:text-3xl font-bold mb-1 ${isDark ? 'text-white' : 'text-slate-900'}`}>{stat.value}</h3>
+                                        <p className={`text-xs sm:text-sm ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>{stat.label}</p>
                                     </div>
                                 ))}
                             </div>
@@ -519,10 +519,10 @@ const Home = ({ isDark }) => {
                 <div className="container mx-auto px-6">
                     <SectionTitle title="About Me" subtitle="My journey and professional mission" isDark={isDark} />
 
-                    <div className="grid lg:grid-cols-2 gap-16 items-start max-w-6xl mx-auto">
+                    <div className="grid lg:grid-cols-2 gap-10 sm:gap-16 items-start max-w-6xl mx-auto">
                         {/* Narrative Side */}
-                        <div className="space-y-8">
-                            <div className={`p-8 rounded-2xl border-l-4 border-cyan-500 ${isDark ? 'bg-slate-800/40 text-slate-300' : 'bg-white text-slate-600 shadow-sm'}`}>
+                        <div className="space-y-6 sm:space-y-8">
+                            <div className={`p-6 sm:p-8 rounded-2xl border-l-4 border-cyan-500 ${isDark ? 'bg-slate-800/40 text-slate-300' : 'bg-white text-slate-600 shadow-sm'}`}>
                                 <h3 className={`text-2xl font-bold mb-6 ${isDark ? 'text-white' : 'text-slate-900'}`}>My Story</h3>
                                 <div className="space-y-4 text-lg leading-relaxed text-pretty">
                                     {PORTFOLIO_DATA.personal.fullBio?.map((paragraph, i) => (
@@ -541,7 +541,7 @@ const Home = ({ isDark }) => {
                                 {PORTFOLIO_DATA.skills.map((skill, index) => (
                                     <span
                                         key={index}
-                                        className={`px-5 py-2.5 rounded-xl border transition-all cursor-default select-none text-base font-medium ${isDark
+                                        className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl border transition-all cursor-default select-none text-sm sm:text-base font-medium ${isDark
                                             ? 'bg-slate-800 text-slate-300 border-slate-700 hover:border-cyan-500 hover:text-cyan-400'
                                             : 'bg-white text-slate-700 border-slate-200 hover:border-cyan-600 hover:text-cyan-600 shadow-sm'
                                             }`}
@@ -631,7 +631,7 @@ const Home = ({ isDark }) => {
                 <div className="container mx-auto px-6">
                     <SectionTitle title="Achievements" subtitle="Milestones in my computer science journey" isDark={isDark} />
 
-                    <div className={`max-w-3xl mx-auto rounded-2xl p-8 border ${isDark
+                    <div className={`max-w-3xl mx-auto rounded-2xl p-6 sm:p-8 border ${isDark
                         ? 'bg-slate-800/50 border-slate-700'
                         : 'bg-white border-slate-200 shadow-sm'
                         }`}>
