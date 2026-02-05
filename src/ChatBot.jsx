@@ -35,6 +35,16 @@ const ChatBot = ({ isDark, isOpen, setIsOpen }) => {
 
         try {
             const botResponseText = await GeminiService.generateContent(input);
+
+            if (botResponseText === "RATE_LIMIT_REACHED") {
+                setMessages(prev => [...prev, {
+                    role: 'bot',
+                    text: "I've reached my daily quota for free tier use! 🚀 Ajay's portfolio AI has a limited daily budget. Please try again tomorrow or ask about something else!"
+                }]);
+                setIsLoading(false);
+                return;
+            }
+
             const botMessage = { role: 'bot', text: botResponseText };
             setMessages(prev => [...prev, botMessage]);
         } catch (error) {

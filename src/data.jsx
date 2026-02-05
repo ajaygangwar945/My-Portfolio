@@ -389,24 +389,66 @@ export const GeminiService = {
         const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
 
         // NOTE: If apiKey is empty, AI features will return a placeholder message.
-        if (!apiKey) return "AI features require an API Key. Please add VITE_GEMINI_API_KEY to your .env file.";
+        if (!apiKey) {
+            console.error("Gemini API Key missing!");
+            return "AI features require an API Key. Please add VITE_GEMINI_API_KEY to your .env file.";
+        }
 
-        const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
+        const url = `https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+        // Define system tone and context
+        const systemPrompt = `You are a helpful AI assistant for Ajay Gangwar's portfolio. 
+        Ajay is an ${PORTFOLIO_DATA.personal.role}.
+        His mission is: ${PORTFOLIO_DATA.personal.mission}.
+        Keep your answers concise, professional, and focused on Ajay's skills, projects, and experience. 
+        If asked about something unrelated, politely bring the conversation back to Ajay's work.
+        User Query: `;
 
         try {
+            console.log("Sending prompt to Gemini:", prompt);
             const response = await fetch(url, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    contents: [{ parts: [{ text: prompt }] }]
+                    contents: [{
+                        parts: [{ text: systemPrompt + prompt }]
+                    }]
                 })
             });
 
+            if (!response.ok) {
+                let errorData = null;
+                try {
+                    errorData = await response.json();
+                } catch (e) {
+                    console.error("Failed to parse Gemini error response as JSON:", e);
+                }
+
+                console.error(`Gemini API Error (${response.status}):`, errorData || response.statusText);
+
+                // 429 = Rate Limit, 403 = Forbidden (often quota hit on free tier)
+                if (response.status === 429 || response.status === 403) {
+                    console.warn(`Gemini Quota/Rate Limit hit (${response.status})`);
+                    return "RATE_LIMIT_REACHED";
+                }
+
+                throw new Error(`API Error: ${response.status}`);
+            }
+
             const data = await response.json();
-            return data.candidates?.[0]?.content?.parts?.[0]?.text || "Sorry, I couldn't generate a response.";
+            console.log("Gemini API Full Response:", data);
+
+            const botResponse = data.candidates?.[0]?.content?.parts?.[0]?.text;
+
+            if (!botResponse) {
+                console.warn("Gemini returned an empty response or unexpected structure:", data);
+                return "I'm sorry, I couldn't generate a specific response for that. Could you try rephrasing?";
+            }
+
+            return botResponse;
         } catch (error) {
-            console.error("Gemini API Error:", error);
-            return "Error connecting to AI service.";
+            console.error("Gemini API Connection Error:", error);
+            return `Sorry, I'm having trouble connecting to the AI service [${error.message || 'Unknown Error'}]. Please try again in a moment.`;
         }
     }
 };

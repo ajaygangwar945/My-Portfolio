@@ -339,16 +339,36 @@ const ProjectGenerator = ({ isDark }) => {
 
         try {
             const result = await GeminiService.generateContent(prompt);
+
+            // Handle specific rate limit signal
+            if (result === "RATE_LIMIT_REACHED") {
+                setSuggestion({
+                    title: "Rate Limit Reached",
+                    description: "Ajay's portfolio AI has a daily limit for free tier usage. Please try again tomorrow or later today!",
+                    stack: ["Limit", "Reached"],
+                    features: ["Check back soon"]
+                });
+                setLoading(false);
+                return;
+            }
+
             // Clean up markdown code blocks if Gemini sends them
             const cleanJson = result.replace(/```json/g, '').replace(/```/g, '').trim();
-            const projectData = JSON.parse(cleanJson);
-            setSuggestion(projectData);
+
+            // Validate if it's JSON before parsing
+            if (cleanJson.startsWith('{') && cleanJson.endsWith('}')) {
+                const projectData = JSON.parse(cleanJson);
+                setSuggestion(projectData);
+            } else {
+                throw new Error("Invalid response format from AI");
+            }
         } catch (e) {
+            console.error("Project Generation Error:", e);
             setSuggestion({
                 title: "AI Project Suggestion",
-                description: "Could not parse AI response perfectly, but here is a raw idea: " + e.message,
+                description: "I'm having trouble coming up with an idea right now. " + (e.message.includes("Unexpected token") ? "The AI returned a non-standard response." : e.message),
                 stack: ["React", "AI"],
-                features: ["Try again"]
+                features: ["Try again in a bit"]
             });
         }
         setLoading(false);

@@ -77,13 +77,12 @@ AI-driven application using Google Gemini to optimize resumes for job descriptio
 - 🎓 **B.Tech in Computer Science** — Lovely Professional University (Specializing in Data Science)
 - 🥈 **Runner-up** — BlockseBlock Hackathon 2025 (National Level)
 - 🏅 **5th Place** — Code Hunt 2025 (IIT Ropar)
-- ⭐ **5 Star Coder** — HackerRank (Problem Solving & Data Structures)
 
 ---
 
 ## 📂 Project Structure
 
-```bash
+```
 my-portfolio/
 ├── public/                 # Static assets (images, icons, resume)
 │   ├── projects/           # Project screenshots
@@ -91,16 +90,20 @@ my-portfolio/
 │   ├── resume.pdf          # Professional CV
 │   └── favicon.svg         # Site favicon
 ├── src/                    # Application source code
-│   ├── App.jsx            # Core application logic & routing
-│   ├── Home.jsx           # Main landing page component
-│   ├── ChatBot.jsx        # AI-powered assistant interface
-│   ├── data.jsx           # Centralized portfolio data (Single Source of Truth)
-│   ├── ProjectCard.jsx    # Reusable project showcase component
-│   ├── AllProjects.jsx    # Complete projects gallery
-│   └── index.css          # Global styles & Tailwind injections
+│   ├── App.jsx             # Core application logic & routing
+│   ├── Home.jsx            # Main landing page component
+│   ├── ChatBot.jsx         # AI-powered assistant interface
+│   ├── data.jsx            # Centralized portfolio data (Single Source of Truth)
+│   ├── ProjectCard.jsx     # Reusable project showcase component
+│   ├── CertificateCard.jsx # Reusable certificate display component
+│   ├── SectionTitle.jsx    # Reusable section header component
+│   ├── AllProjects.jsx     # Complete projects gallery page
+│   ├── AllCertificates.jsx # Complete certificates gallery page
+│   ├── PositionDetails.jsx # Detailed view for experience/positions
+│   └── index.css           # Global styles & Tailwind injections
 ├── .env                    # Configuration for API Keys
 ├── tailwind.config.js      # Tailwind CSS configuration
-└── vite.config.js         # Vite build configuration
+└── vite.config.js          # Vite build configuration
 ```
 
 ---
