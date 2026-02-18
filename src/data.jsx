@@ -34,6 +34,24 @@ export const PORTFOLIO_DATA = {
     ],
     projects: [
         {
+            title: "Eventfolio",
+            description: "Ghibli-inspired interactive portfolio showcasing hackathons, leadership, and technical journeys using pure HTML, CSS, and JavaScript.",
+            tags: ["HTML5", "CSS3", "JavaScript", "Vanilla JS"],
+            image: "/projects/event.png",
+            year: "2026",
+            github: "https://github.com/ajaygangwar945/Eventfolio",
+            demo: "https://eventfolio.vercel.app"
+        },
+        {
+            title: "Certificates & Docs Portal",
+            description: "Interactive portal to organize, search, and showcase certificates & documents with intelligent filtering, dynamic theming, and premium UI.",
+            tags: ["HTML5", "CSS3", "JavaScript", "PDF"],
+            image: "/projects/docs.png",
+            year: "2026",
+            github: "https://github.com/ajaygangwar945/Certificates-Docs-Portal",
+            demo: "https://certificates-docs-portal.vercel.app"
+        },
+        {
             title: "Portfolio Hub",
             description: "A premium multi-portfolio hub featuring 16 technology portals with glassmorphic UI, 3D visuals, and interactive data dashboards. Built using HTML, CSS, JavaScript, and Three.js.",
             tags: ["HTML5", "CSS3", "JavaScript", "Three.js", "Glassmorphism", "Vercel"],
@@ -159,7 +177,22 @@ export const PORTFOLIO_DATA = {
             github: "#",
             demo: "#"
         },
+
+
+        {
+            title: "First HTML Project Overview",
+            description: "Front-end learning hub built with HTML, CSS, JavaScript, and Three.js, featuring an interactive 3D dashboard, modular content, and responsive UI design.",
+            tags: ["HTML5", "CSS3", "JavaScript", "Three.js", "Web Development"],
+            image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+            year: "2020",
+            github: "https://github.com/ajaygangwar945/First-HTML-Project-Overview",
+            demo: "https://ajaygangwar945.github.io/First-HTML-Project-Overview/"
+        },
+
+
+
     ],
+
     achievements: [
         {
             title: "Runner-up - BlockseBlock Hackathon 2025",

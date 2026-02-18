@@ -44,8 +44,9 @@ const ProjectCard = ({ project, isDark }) => (
                 </div>
             </div>
             <h3 className={`text-xl font-bold mb-2 ${isDark ? 'text-white' : 'text-slate-800'}`}>{project.title}</h3>
-            <p className={`mb-4 h-20 overflow-hidden text-sm leading-relaxed ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
+            <p className={`mb-4 h-auto md:h-20 overflow-hidden text-sm leading-relaxed ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
                 {project.description}
+
             </p>
             <div className="flex flex-wrap gap-2 mt-auto">
                 {project.tags.map((tag, i) => (
