@@ -205,12 +205,6 @@ export const PORTFOLIO_DATA = {
             organization: "IIT Ropar",
             description: "Participated in the annual Code Hunt competition and secured 5th place.",
             icon: <Cpu size={20} />
-        },
-        {
-            title: "5 Star Coder",
-            organization: "HackerRank",
-            description: "Achieved top rank in Problem Solving and Data Structures.",
-            icon: <Code size={20} />
         }
     ],
     education: [
