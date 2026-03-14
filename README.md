@@ -84,11 +84,13 @@ AI-driven application using Google Gemini to optimize resumes for job descriptio
 
 ```
 my-portfolio/
+├── netlify/
+│   └── functions/          # Serverless functions
+│       └── gemini-proxy.js # 🔒 Secure AI Proxy for production
 ├── public/                 # Static assets (images, icons, resume)
 │   ├── projects/           # Project screenshots
 │   ├── events/             # Event photos
-│   ├── resume.pdf          # Professional CV
-│   └── favicon.svg         # Site favicon
+│   └── resume.pdf          # Professional CV
 ├── src/                    # Application source code
 │   ├── App.jsx             # Core application logic & routing
 │   ├── Home.jsx            # Main landing page component
@@ -102,9 +104,20 @@ my-portfolio/
 │   ├── PositionDetails.jsx # Detailed view for experience/positions
 │   └── index.css           # Global styles & Tailwind injections
 ├── .env                    # Configuration for API Keys
+├── project_documentation.txt # 📖 Technical Deep-Dive & Logic Summary
 ├── tailwind.config.js      # Tailwind CSS configuration
 └── vite.config.js          # Vite build configuration
 ```
+
+---
+
+## 🧠 AI Proxy & Security
+
+The portfolio uses a **Dual-Path AI Architecture**:
+- **Development**: Direct connection to Google Gemini API for fast iteration.
+- **Production**: Requests are proxied through **Netlify Functions** (`gemini-proxy.js`) to keep the API Key hidden from the client-side, ensuring security and preventing unauthorized quota usage.
+
+For a full breakdown of the logic, see [project_documentation.txt](./project_documentation.txt).
 
 ---
 

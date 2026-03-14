@@ -1,0 +1,65 @@
+# Ajay Gangwar's Portfolio - Project Documentation
+
+This document provides a comprehensive overview of the technologies, logic, and working of the portfolio project.
+
+## 🛠️ Technology Stack
+
+### Core Frameworks & Libraries
+- **React (Vite)**: The main frontend framework for building a fast, modular, and responsive UI.
+- **Tailwind CSS**: Used for advanced, utility-first styling, ensuring a premium and modern aesthetic.
+- **Lucide React**: Provides a consistent set of beautiful icons used throughout the site.
+- **React Router DOM**: Handles navigation and routing between different sections (Home, All Projects, Certificates).
+- **React Markdown & Remark GFM**: Used in the ChatBot to render AI responses with full markdown support (links, code blocks, formatting).
+
+### AI & Intelligence
+- **Google Gemini API (gemini-2.0-flash)**: Powers the intelligent features of the portfolio.
+- **Netlify Functions**: Used as a secure backend proxy to handle Gemini API calls in production, protecting the API key.
+
+---
+
+## 📂 Project Structure & Key Files
+
+### Root Directory
+- `package.json`: Manages dependencies and scripts (`npm run dev`, `build`).
+- `netlify/functions/gemini-proxy.js`: The serverless function that acts as a bridge between the frontend and the Gemini API.
+- `index.html`: The entry point for the browser.
+
+### `src/` Directory
+- `main.jsx`: The application entry point that renders the React tree.
+- `App.jsx`: The main layout and routing configuration.
+- `data.jsx`: **The Brain of the Project**. It contains all the hardcoded portfolio data (projects, skills, experience) and the `GeminiService` for AI interaction.
+- `Home.jsx`: The primary dashboard featuring the Hero, About, Experience, and Project sections.
+- `ChatBot.jsx`: The interactive AI assistant component.
+- `ProjectCard.jsx` & `CertificateCard.jsx`: Reusable components for displaying list items.
+- `index.css`: Global styles and Tailwind directives.
+
+---
+
+## 🧠 Core Logic & Working
+
+### 1. Data-Driven Architecture
+The entire portfolio is designed to be easily updated. By editing the `PORTFOLIO_DATA` object in `src/data.jsx`, you can update every text, link, and project on the site without touching the component logic.
+
+### 2. AI Assistant (ChatBot)
+- **Logic**: The `ChatBot.jsx` captures user input and sends it to the `GeminiService`.
+- **System Context**: Every message sent to the AI includes a hidden "System Prompt" (defined in `gemini-proxy.js` and `data.jsx`) that tells the AI it is "Ajay's Assistant," ensuring it stays professional and focused on your career.
+- **Markdown Rendering**: Responses from the AI are processed through `react-markdown` to ensure they look great (e.g., technical code samples are highlighted).
+
+### 3. AI Project Idea Generator
+- Located in `Home.jsx`, this button sends your current skills (from `data.jsx`) to Gemini.
+- The AI is instructed to return a **JSON object**, which the frontend parses to show you a "Next Big Idea" with a title, description, and stack.
+
+### 4. Secure API Handling
+- **Development**: The app calls the Google API directly using a `.env` file for speed.
+- **Production**: To prevent hackers from stealing your API key, the app calls `/.netlify/functions/gemini-proxy`. This function runs on the server side where the `GEMINI_API_KEY` is safely hidden.
+
+### 5. Contact Form Logic
+- Uses **Netlify Forms**. The `handleSubmit` function in `Home.jsx` encodes the form data and sends it as a POST request to Netlify's servers, allowing you to receive messages without needing a custom backend.
+
+---
+
+## 🚀 Key Features Recap
+- **Dark/Light Mode**: Full theme support across all components.
+- **Responsive Design**: Optimized for mobile, tablet, and desktop.
+- **Rate Limiting**: Includes logic to handle AI quota limits gracefully, informing the user if the "daily budget" is reached.
+- **Premium Aesthetics**: Uses glassmorphism, smooth transitions (via CSS), and high-quality typography (Inter/Roboto).

@@ -98,7 +98,7 @@ export default function App() {
                         </a>
 
                         {/* Desktop Menu */}
-                        <div className="hidden md:flex gap-8 items-center">
+                        <div className="hidden lg:flex lg:gap-4 xl:gap-8 items-center text-sm xl:text-base">
                             <NavLink href="/" isDark={isDark}>Home</NavLink>
                             <NavLink href="#about" isDark={isDark}>About</NavLink>
                             <NavLink href="#experience" isDark={isDark}>Experience</NavLink>
@@ -126,7 +126,7 @@ export default function App() {
                         </div>
 
                         {/* Mobile Controls */}
-                        <div className="md:hidden flex items-center gap-4">
+                        <div className="lg:hidden flex items-center gap-4">
                             <button
                                 onClick={toggleTheme}
                                 className={`p-2 rounded-full ${isDark ? 'text-yellow-400' : 'text-slate-600'}`}
@@ -140,7 +140,7 @@ export default function App() {
                     </div>
 
                     {/* Mobile Menu */}
-                    <div className={`md:hidden fixed inset-0 z-[100] transition-all duration-300 ${isMenuOpen ? 'visible' : 'invisible'}`}>
+                    <div className={`lg:hidden fixed inset-0 z-[100] transition-all duration-300 ${isMenuOpen ? 'visible' : 'invisible'}`}>
                         {/* Overlay */}
                         <div
                             className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300 ${isMenuOpen ? 'opacity-100' : 'opacity-0'}`}
