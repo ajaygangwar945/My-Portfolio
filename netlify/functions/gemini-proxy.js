@@ -19,11 +19,11 @@ exports.handler = async (event, context) => {
   }
 
   try {
-    const { prompt } = JSON.parse(event.body);
+    const { prompt, context } = JSON.parse(event.body);
     
     // We move the system context here for better security/privacy
     const systemPrompt = `You are a helpful AI assistant for Ajay Gangwar's portfolio. 
-    Ajay is an Aspiring Data Scientist | Full Stack Developer | Problem Solver.
+    Use the following data to answer user queries: ${context || "Ajay is an Aspiring Data Scientist | Full Stack Developer | Problem Solver."}
     Keep your answers concise, professional, and focused on Ajay's skills, projects, and experience. 
     If asked about something unrelated, politely bring the conversation back to Ajay's work.
     User Query: `;

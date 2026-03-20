@@ -81,6 +81,15 @@ export default function App() {
         setIsDark(!isDark);
     };
 
+    // Update document class for Tailwind dark mode
+    useEffect(() => {
+        if (isDark) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    }, [isDark]);
+
     return (
         <BrowserRouter>
             <ScrollToTop />
@@ -170,7 +179,7 @@ export default function App() {
                                 <NavLink href="#contact" mobile isDark={isDark} onClick={() => setIsMenuOpen(false)}>Contact</NavLink>
                             </nav>
 
-                            <div className="mt-auto pt-6 border-t dark:border-slate-800 border-slate-100 flex flex-col gap-4">
+                            <div className={`mt-auto pt-6 border-t flex flex-col gap-4 ${isDark ? 'border-slate-800' : 'border-slate-100'}`}>
                                 <button
                                     onClick={() => { toggleTheme(); setIsMenuOpen(false); }}
                                     className={`flex items-center gap-3 p-4 rounded-xl w-full transition-colors font-medium ${isDark ? 'bg-slate-800 text-yellow-400 hover:bg-slate-700' : 'bg-slate-50 text-slate-700 hover:bg-slate-100'}`}

@@ -72,8 +72,8 @@ const ChatBot = ({ isDark, isOpen, setIsOpen }) => {
             )}
 
             {/* Chat Window */}
-            <div className={`fixed bottom-6 right-6 flex flex-col transition-all duration-300 transform z-50 shadow-2xl rounded-2xl overflow-hidden ${isOpen ? 'scale-100 opacity-100 translate-y-0' : 'scale-90 opacity-0 translate-y-10 pointer-events-none'
-                } ${isExpanded ? 'w-[90vw] h-[85vh] md:w-[900px]' : 'w-full max-w-lg h-[450px]'} ${isDark ? 'bg-slate-800 border border-slate-700' : 'bg-white border border-slate-200'}`}>
+            <div className={`fixed bottom-4 right-4 left-4 md:left-auto md:bottom-6 md:right-6 flex flex-col transition-all duration-300 transform z-50 shadow-2xl rounded-2xl overflow-hidden ${isOpen ? 'scale-100 opacity-100 translate-y-0' : 'scale-90 opacity-0 translate-y-10 pointer-events-none'
+                } ${isExpanded ? 'w-[92vw] h-[85vh] md:w-[900px]' : 'w-auto md:w-full md:max-w-lg h-[500px] md:h-[450px]'} ${isDark ? 'bg-slate-800 border border-slate-700' : 'bg-white border border-slate-200'}`}>
 
                 {/* Header */}
                 <div className={`p-4 border-b flex justify-between items-center ${isDark ? 'bg-slate-900/90 border-slate-700' : 'bg-slate-50/90 border-slate-200'

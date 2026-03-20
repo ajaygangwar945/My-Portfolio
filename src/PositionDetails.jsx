@@ -30,7 +30,7 @@ const PositionDetails = ({ isDark }) => {
         <div className={`min-h-screen pt-24 pb-12 ${isDark ? 'bg-slate-900' : 'bg-slate-50'}`}>
             <div className="container mx-auto px-6">
                 <div className="max-w-4xl mx-auto">
-                    <div className={`p-8 rounded-2xl border mb-12 ${isDark
+                    <div className={`p-6 md:p-8 rounded-2xl border mb-12 ${isDark
                         ? 'bg-slate-800/50 border-slate-700'
                         : 'bg-white border-slate-200 shadow-sm'
                         }`}>
@@ -67,9 +67,9 @@ const PositionDetails = ({ isDark }) => {
                     </div>
 
                     {position.events && position.events.length > 0 && (
-                        <div>
+                        <div className="mb-16">
                             <SectionTitle title="Events & Highlights" subtitle="Memorable moments and successful initiatives" isDark={isDark} />
-                            <div className={`grid gap-6 ${position.events.length === 1 ? 'place-items-center' : 'md:grid-cols-2'}`}>
+                            <div className={`grid gap-6 ${position.events.length === 1 ? 'place-items-center' : 'grid-cols-1 md:grid-cols-2'}`}>
                                 {position.events.map((event, idx) => (
                                     <div key={idx} className={`group rounded-xl overflow-hidden border transition-all hover:-translate-y-1 w-full max-w-md ${isDark
                                         ? 'bg-slate-800 border-slate-700 hover:border-cyan-500/50'
@@ -95,6 +95,40 @@ const PositionDetails = ({ isDark }) => {
                                             <p className={`text-sm ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
                                                 {event.description}
                                             </p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    )}
+
+                    {position.certificates && position.certificates.length > 0 && (
+                        <div>
+                            <SectionTitle 
+                                title={position.certificates.length === 1 ? "Certificate & Recognition" : "Certificates & Recognitions"} 
+                                subtitle={position.certificates.length === 1 ? "Official verification of participation and achievement" : "Official verification of participation and achievements"} 
+                                isDark={isDark} 
+                            />
+                            <div className="space-y-12">
+                                {position.certificates.map((cert, idx) => (
+                                    <div key={idx} className={`p-6 md:p-8 rounded-2xl border ${isDark
+                                        ? 'bg-slate-800/50 border-slate-700'
+                                        : 'bg-white border-slate-200 shadow-sm'
+                                        }`}>
+                                        <div className="max-w-3xl mx-auto">
+                                            <h4 className={`text-xl font-bold mb-4 ${isDark ? 'text-white' : 'text-slate-800'}`}>
+                                                {cert.title}
+                                            </h4>
+                                            <p className={`text-lg mb-8 ${isDark ? 'text-slate-300' : 'text-slate-600'}`}>
+                                                {cert.description}
+                                            </p>
+                                            <div className={`rounded-xl overflow-hidden border ${isDark ? 'border-slate-700' : 'border-slate-200'}`}>
+                                                <img
+                                                    src={cert.image}
+                                                    alt={cert.title}
+                                                    className="w-full h-auto"
+                                                />
+                                            </div>
                                         </div>
                                     </div>
                                 ))}

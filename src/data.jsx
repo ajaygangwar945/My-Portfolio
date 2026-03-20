@@ -27,12 +27,84 @@ export const PORTFOLIO_DATA = {
         "HTML", "CSS", "JavaScript", "Java", "Python", "C++", "React.js", "Node.js", "MongoDB", "SQL", "Git", "Docker", "AWS"
     ],
     stats: [
-        { label: "Technical Projects", value: "15+" },
-        { label: "Algorithms Solved", value: "100+" },
-        { label: "Hackathon Wins", value: "2" },
+        { label: "Technical Projects", value: "25+" },
+        { label: "Questions Solved", value: "100+" },
+        { label: "Hackathon and Events Wins", value: "3" },
         { label: "Years of Growth", value: "3+" }
     ],
     projects: [
+        {
+            title: "AG Portfolio",
+            description: "Personal portfolio website built to showcase technical projects, skills, and experience.",
+            tags: ["JavaScript", "Frontend Development", "CSS", "Portfolio"],
+            image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80",
+            year: "2026",
+            github: "https://github.com/ajaygangwar945/AG-Portfolio",
+            demo: "https://ajaygangwar-portfolio.vercel.app/"
+        },
+        {
+            title: "CV Portfolio",
+            description: "Modern interactive CV portfolio with 3D effects, glassmorphism design, and in-page PDF viewer. Built using HTML, CSS & JavaScript.",
+            tags: ["HTML5", "CSS3", "JavaScript", "3D Effects"],
+            image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=800&q=80",
+            year: "2026",
+            github: "https://github.com/ajaygangwar945/CV",
+            demo: "https://ajaygangwar945.github.io/CV/"
+        },
+        {
+            title: "MedPath Pro",
+            description: "Interactive hospital shortest-path visualizer using Dijkstra’s algorithm with real-time emergency routing and hospital resource management.",
+            tags: ["JavaScript", "Node.js", "MongoDB", "Three.js"],
+            image: "/projects/medpath_pro.png",
+            year: "2026",
+            github: "https://github.com/ajaygangwar945/MedPath-Pro",
+            demo: "https://medpath-pro.onrender.com/"
+        },
+        {
+            title: "Intelligence Explorer",
+            description: "Interactive AI learning dashboard built with HTML, CSS, and Three.js that presents key AI topics in a clean, animated interface.",
+            tags: ["HTML5", "CSS3", "JavaScript", "Three.js"],
+            image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=800&q=80",
+            year: "2026",
+            github: "https://github.com/ajaygangwar945/Intelligence-Explorer",
+            demo: "https://intelligence-explorer.vercel.app"
+        },
+        {
+            title: "AI Legal Advisor",
+            description: "AI-powered legal assistance platform providing real-time responses to legal queries through an interactive chat interface.",
+            tags: ["React", "TypeScript", "Tailwind CSS", "Gemini AI"],
+            image: "/projects/ai_legal_advisor.png",
+            year: "2026",
+            github: "https://github.com/ajaygangwar945/AI-Legal-Advisor",
+            demo: "https://ai-legal-advisor-chatbot.vercel.app/"
+        },
+        {
+            title: "Student Portal",
+            description: "Tool that processes Excel student data and generates a modern, searchable web dashboard with animations and theme support.",
+            tags: ["Python", "Pandas", "HTML5", "CSS3", "JavaScript"],
+            image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=800&q=80",
+            year: "2026",
+            github: "https://github.com/ajaygangwar945/Student-Portal",
+            demo: "https://student-portal-2023.vercel.app/"
+        },
+        {
+            title: "Road Accident Dashboard",
+            description: "Data visualization project that analyzes road accident trends and hotspots using Excel, HTML, and CSS.",
+            tags: ["Excel", "HTML5", "CSS3", "Data Analytics"],
+            image: "/projects/road_accident_dashboard.png",
+            year: "2026",
+            github: "https://github.com/ajaygangwar945/Road-Accident-Dashboard",
+            demo: "https://road-accident-dashboard.vercel.app/"
+        },
+        {
+            title: "Conference Paper Submission Portal",
+            description: "Web-based platform built with Oracle 19c and APEX to manage conference paper submissions and reviews.",
+            tags: ["Oracle 19c", "Oracle APEX", "SQL"],
+            image: "/projects/conference_portal2.png",
+            year: "2026",
+            github: "https://github.com/ajaygangwar945/Conference-Paper-Submission-Portal",
+            demo: "https://oracleapex.com/ords/r/ajaygangwar945/conference-paper-submission-portal"
+        },
         {
             title: "Eventfolio",
             description: "Ghibli-inspired interactive portfolio showcasing hackathons, leadership, and technical journeys using pure HTML, CSS, and JavaScript.",
@@ -53,7 +125,7 @@ export const PORTFOLIO_DATA = {
         },
         {
             title: "Portfolio Hub",
-            description: "A premium multi-portfolio hub featuring 16 technology portals with glassmorphic UI, 3D visuals, and interactive data dashboards. Built using HTML, CSS, JavaScript, and Three.js.",
+            description: "A premium multi-portfolio hub featuring multiple technology portals with a glassmorphic interface, immersive 3D visuals, and interactive data dashboards, built using HTML, CSS, JavaScript, and Three.js.",
             tags: ["HTML5", "CSS3", "JavaScript", "Three.js", "Glassmorphism", "Vercel"],
             image: "/projects/portfolio-hub.png",
             year: "2026",
@@ -85,7 +157,7 @@ export const PORTFOLIO_DATA = {
             image: "/projects/rainfall-analysis.png",
             year: "2025",
             github: "https://github.com/ajaygangwar945/Rainfall-Data-Analysis-Project",
-            demo: "https://ajaygangwar945.github.io/Rainfall-Data-Analysis-Project/"
+            demo: "https://ajaygangwar945.github.io/Indian-Rainfall-Data-Analysis/"
         },
         {
             title: "Global Terrorism Analysis",
@@ -97,7 +169,7 @@ export const PORTFOLIO_DATA = {
             demo: "https://app.powerbi.com/view?r=eyJrIjoiNTY4YWQxMGItNGFhMC00ZWQ4LThlZjUtMDY0NWY4OGJkYjdhIiwidCI6ImUxNGU3M2ViLTUyNTEtNDM4OC04ZDY3LThmOWYyZTJkNWE0NiIsImMiOjEwfQ%3D%3D"
         },
         {
-            title: "Healthcare Interoperability",
+            title: "Ayush FHIR",
             description: "Platform integrating traditional Ayush systems with global standards (FHIR R4, ICD-11) for secure data exchange.",
             tags: ["TypeScript", "Node.js", "FHIR", "Healthcare"],
             image: "/projects/icd-mapping.png",
@@ -124,8 +196,17 @@ export const PORTFOLIO_DATA = {
             demo: "https://ats-resume-score-945.streamlit.app"
         },
         {
+            title: "GitHub Profile Overview",
+            description: "B.Tech CSE student | Data Science & AI enthusiast | Building ML-driven, data-centric, and impact-focused software solutions.",
+            tags: ["Python", "Data Science", "Machine Learning", "AI", "Cybersecurity"],
+            image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=800&q=80",
+            year: "2025",
+            github: "https://github.com/ajaygangwar945/ajaygangwar945",
+            demo: "https://ajaygangwar945.github.io/ajaygangwar945/"
+        },
+        {
             title: "SoftHub",
-            description: "Node.js & Express backend with secure authentication, MongoDB integration, and email-based OTP password reset.",
+            description: "SoftHub is a high-performance, full-stack software distribution platform. It combines a cinematic frontend experience with a robust, secure Node.js backend.",
             tags: ["Node.js", "Express", "MongoDB", "Authentication"],
             image: "/projects/chat-app.png",
             year: "2024",
@@ -147,14 +228,14 @@ export const PORTFOLIO_DATA = {
             tags: ["HTML", "CSS", "JavaScript"],
             image: "/projects/pet-adoption.png",
             year: "2023",
-            github: "https://github.com/ajaygangwar945/Pet-Adoption-and-Animal-Welfare",
-            demo: "https://pet-adoption-and-animal-welfare.netlify.app"
+            github: "https://github.com/ajaygangwar945/Pet-Adoption-Animal-Welfare",
+            demo: "https://pet-adoption-animal-welfare.netlify.app/"
         },
         {
             title: "First HTML Project Overview",
             description: "Front-end learning hub built with HTML, CSS, JavaScript, and Three.js, featuring an interactive 3D dashboard, modular content, and responsive UI design.",
             tags: ["HTML5", "CSS3", "JavaScript", "Three.js", "Web Development"],
-            image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+            image: "/projects/html-project.png",
             year: "2020",
             github: "https://github.com/ajaygangwar945/First-HTML-Project-Overview",
             demo: "https://ajaygangwar945.github.io/First-HTML-Project-Overview/"
@@ -187,16 +268,22 @@ export const PORTFOLIO_DATA = {
     ],
     education: [
         {
-            degree: "Bachelor of Technology in Computer Science",
+            degree: "Bachelor of Technology - CSE",
             school: "Lovely Professional University",
-            year: "2023 - Present",
-            description: "Specializing in Data Science and Analytics. Core focus on Python, Machine Learning, and Full Stack Development. CGPA: 7.5/10"
+            year: "Aug ‘23 - Present",
+            description: "Specializing in Data Science, Machine Learning, and Full Stack Development. CGPA: 7.4"
         },
         {
-            degree: "Higher Secondary Education",
+            degree: "Intermediate",
             school: "Vidya Bhavan Public School",
-            year: "2021 - 2022",
-            description: "Major in Science (Physics, Chemistry, Mathematics)"
+            year: "Apr ‘21 - Apr ‘22",
+            description: "Higher Secondary Education; Percentage: 72%"
+        },
+        {
+            degree: "Matriculation",
+            school: "Vidya Bhavan Public School",
+            year: "Apr ‘19 - Apr ‘20",
+            description: "Secondary Education; Percentage: 94%"
         }
     ],
     experience: [
@@ -205,12 +292,6 @@ export const PORTFOLIO_DATA = {
             company: "GitHub",
             year: "2024 - Present",
             description: "Contributed to various open source projects including bug fixes and feature additions."
-        },
-        {
-            role: "Full Stack Development Intern",
-            company: "Skillcraft Technology",
-            year: "Jun 2025 - Aug 2025",
-            description: "Architected and maintained performance-critical web applications using React and Node.js, achieving a 20% improvement in load times."
         }
 
     ],
@@ -269,6 +350,13 @@ export const PORTFOLIO_DATA = {
                     image: "/events/sports.jpg",
                     description: "Coordinated LPU Inter-Hostel Sports Tournaments, fostering teamwork and healthy competition among residents."
                 }
+            ],
+            certificates: [
+                {
+                    title: "Incredible 8 - Inter-Hostel Competition",
+                    image: "/certificates/hostel.png",
+                    description: "Participated in the Incredible 8 - LPU's Inter-Hostel Competition on Social Media, organized by the Department of Student Organization."
+                }
             ]
         },
         {
@@ -289,71 +377,250 @@ export const PORTFOLIO_DATA = {
                     image: "/events/mun.jpg",
                     description: "Organized the International Global Conference Model United Nations India 2024, managing logistics and events for national and international delegates."
                 }
+            ],
+            certificates: [
+                {
+                    title: "IGC MUN - Certificate of Participation",
+                    image: "/certificates/igcmun.png",
+                    description: "Awarded for participating in the IGC MUN India 2024, engaging in diplomatic debates and drafting international policy resolutions."
+                }
             ]
         }
     ],
 
-    blogs: [
+    certificates: [
         {
-            title: "Understanding React Hooks",
-            date: "Oct 2024",
-            description: "A deep dive into useEffect and useMemo.",
-            link: "#"
+            title: "Agile Project Management",
+            organization: "HP",
+            date: "Feb, 2026",
+            image: "/certificates/agile.png",
+            link: "https://drive.google.com/file/d/1Imkpj4Dt2W_3Rqw2zp6vfdfuhJn3zrKQ/view?usp=drive_link"
         },
         {
-            title: "The Future of Web Development",
-            date: "Sep 2024",
-            description: "Exploring WebAssembly and Edge Computing.",
-            link: "#"
-        }
-    ],
-    certificates: [
+            title: "AI Fusion '26",
+            organization: "IIT Ropar",
+            date: "Feb, 2026",
+            image: "/certificates/aifusion26.png",
+            link: "https://drive.google.com/file/d/1YMRrjZE45NEehgrGGTMg5wMxVYCqhYj3/view?usp=drive_link"
+        },
+        {
+            title: "AI Imagination '26",
+            organization: "IIT Ropar",
+            date: "Feb, 2026",
+            image: "/certificates/aiimagination.png",
+            link: "https://drive.google.com/file/d/1rzICFkXwMqYvAJlpTEkE8u1tPl3VnGhB/view?usp=drive_link"
+        },
+        {
+            title: "Code Hunt '26",
+            organization: "IIT Ropar",
+            date: "Feb, 2026",
+            image: "/certificates/codehunt26.png",
+            link: "https://drive.google.com/file/d/1Xv7j4nP64eyX7dzv0yFl_hoPgElu-di4/view?usp=drive_link"
+        },
+        {
+            title: "Data Science & Analytics",
+            organization: "HP",
+            date: "Feb, 2026",
+            image: "/certificates/datascience.png",
+            link: "https://drive.google.com/file/d/1LnyFOshIj-p7J2e0JN72jEjGtb4Ei8xu/view?usp=drive_link"
+        },
+        {
+            title: "Gen AI Nasscom",
+            organization: "Nasscom",
+            date: "Feb, 2026",
+            image: "/certificates/genai.png",
+            link: "https://drive.google.com/file/d/1eZDfhhW7rizqfdX-1C6DxscXu2EaNbeO/view?usp=drive_link"
+        },
+        {
+            title: "Computational Theory",
+            organization: "Infosys Springboard",
+            date: "Dec, 2025",
+            image: "/certificates/computing.png",
+            link: "https://drive.google.com/file/d/1SwhTahtbX7ZN_0SX7OeOTgdTIX0epeiH/view?usp=drive_link"
+        },
         {
             title: "Introduction to Modern AI",
             organization: "Cisco",
             date: "Nov, 2025",
-            image: "/cisco.png",
-            link: "https://drive.google.com/file/d/1-xYkSckZiMQ-kcfEix3g0knXnRWmu8Cd/view?usp=sharing"
+            image: "/certificates/cisco.png",
+            link: "https://drive.google.com/file/d/1IXhi-QHVeFeNh2lrJTzpq3ni9L8zpZ_z/view?usp=drive_link"
+        },
+        {
+            title: "CodeQuery",
+            organization: "LPU",
+            date: "July, 2025",
+            image: "/certificates/codequery.png",
+            link: "https://drive.google.com/file/d/12BZR7UpifWjqF5stIU9iN_sg-05ArZzX/view?usp=drive_link"
+        },
+        {
+            title: "Hack The Block",
+            organization: "BlockseBlock",
+            date: "Jun, 2025",
+            image: "/certificates/hacktheblock.png",
+            link: "https://drive.google.com/open?id=1fteh-XDgZW6aS_cIq-QvQ6mK_YlDDHv_&usp=drive_copy"
+        },
+        {
+            title: "Java Programming",
+            organization: "iamneo",
+            date: "May, 2025",
+            image: "/certificates/java.png",
+            link: "https://drive.google.com/file/d/11qj7aPd87Ru8BuWuWLPp4a56igw5Va8v/view?usp=drive_link"
+        },
+        {
+            title: "AI Fusion '25",
+            organization: "IIT Ropar",
+            date: "Feb, 2025",
+            image: "/certificates/aifusion25.png",
+            link: "https://drive.google.com/open?id=1kPx4SReB5l_5GRCCkYdEl7Q0RalcVRkR&usp=drive_copy"
+        },
+        {
+            title: "Catalyzing Concepts",
+            organization: "IIT Ropar",
+            date: "Feb, 2025",
+            image: "/certificates/cat.png",
+            link: "https://drive.google.com/open?id=1mJ5Pq6BpjAHUnsDNToToChYBR_zqXpPr&usp=drive_copy"
+        },
+        {
+            title: "Circuit Chase '25",
+            organization: "IIT Ropar",
+            date: "Feb 2025",
+            image: "/certificates/circuit.png",
+            link: "https://drive.google.com/file/d/1B9f-utPrEc5SJ7IXCFlNagfC-3gM7fcJ/view?usp=drive_link"
+        },
+        {
+            title: "Code Hunt '25",
+            organization: "IIT Ropar",
+            date: "Feb, 2025",
+            image: "/certificates/codehunt25.png",
+            link: "https://drive.google.com/file/d/1lKpt4HCfHBTN-4xi4CmJXST175dmsAsQ/view?usp=drive_link"
+        },
+        {
+            title: "Maths Arena '25",
+            organization: "IIT Ropar",
+            date: "Feb, 2025",
+            image: "/certificates/maths.png",
+            link: "https://drive.google.com/file/d/1bM5223qVG5toWBnaQzX8A82V-z6Yh8OE/view?usp=drive_link"
         },
         {
             title: "Python for Data Science",
             organization: "NPTEL",
             date: "Feb, 2025",
-            image: "/nptel.png",
+            image: "/certificates/nptel.png",
             link: "https://drive.google.com/file/d/1gjxcSxIoeJkCGOZ1soOdwq0hej6ihmoC/view?usp=sharing"
+        },
+        {
+            title: "Data Structures & Algorithms",
+            organization: "iamneo",
+            date: "Dec, 2024",
+            image: "/certificates/dsa.png",
+            link: "https://drive.google.com/file/d/1lhgm1j55ItCNu-nrEhhnl-On4kidTTXE/view?usp=drive_link"
+        },
+        {
+            title: "Object-Oriented Programming",
+            organization: "iamneo",
+            date: "Dec, 2024",
+            image: "/certificates/oop.png",
+            link: "https://drive.google.com/file/d/1tgIPEyjgOxB43aLX_EfptPHNVsDtvyYT/view?usp=drive_link"
+        },
+        {
+            title: "Digital Systems",
+            organization: "Coursera",
+            date: "Nov, 2024",
+            image: "/certificates/digital.png",
+            link: "https://drive.google.com/open?id=1k5rUPEIpWMpdRs4TfbA5-3tT4HIsytJY&usp=drive_copy"
+        },
+        {
+            title: "Packet Switching Networks and Algorithms",
+            organization: "Coursera",
+            date: "Oct, 2024",
+            image: "/certificates/packet.png",
+            link: "https://drive.google.com/file/d/1dR4YZr6Vl-wFpeRjK4wH2dgP3XnASZcW/view?usp=drive_link"
+        },
+        {
+            title: "Peer-to-Peer Protocols and Local Area Networks",
+            organization: "Coursera",
+            date: "Oct, 2024",
+            image: "/certificates/peer.png",
+            link: "https://drive.google.com/file/d/1z9a322Q9jYf4Y2aPITVxAsdhhSz0px9D/view?usp=drive_link"
+        },
+        {
+            title: "TCP/IP and Advanced Topics",
+            organization: "Coursera",
+            date: "Oct, 2024",
+            image: "/certificates/tcp.png",
+            link: "https://drive.google.com/file/d/156IZQ0xOVZJX9YYY_pmR5Fuy3qvDSxdI/view?usp=drive_link"
+        },
+        {
+            title: "The Bits and Bytes of Computer Networking",
+            organization: "Coursera",
+            date: "Sep, 2024",
+            image: "/certificates/bits.png",
+            link: "https://drive.google.com/file/d/1aLk0gAWazykFdheMVQTWwwLsAgbnGIgo/view?usp=drive_link"
+        },
+        {
+            title: "Introduction to Hardware and Operating Systems",
+            organization: "Coursera",
+            date: "Sep, 2024",
+            image: "/certificates/hardware.png",
+            link: "https://drive.google.com/file/d/1Drcf0VOBjvCKh_NPYJqjPAj-JzX8SrIE/view?usp=drive_link"
+        },
+        {
+            title: "Fundamentals of Network Communication",
+            organization: "Coursera",
+            date: "Sep, 2024",
+            image: "/certificates/network.png",
+            link: "https://drive.google.com/file/d/1zt4IwTnlaRmsrmTfzjhvZIIdPaRlnyzk/view?usp=drive_link"
+        },
+        {
+            title: "C Programming",
+            organization: "iamneo",
+            date: "May, 2024",
+            image: "/certificates/c.png",
+            link: "https://drive.google.com/file/d/16pYnwOIvXTCbAZCyOVtXNeQrcgmuPHRg/view?usp=drive_link"
+        },
+        {
+            title: "Incredible 8 - Inter-Hostel Competition",
+            organization: "LPU (Student Welfare Wing)",
+            date: "May, 2024",
+            image: "/certificates/hostel.png",
+            link: "#"
+        },
+        {
+            title: "IGC MUN - Certificate of Participation",
+            organization: "IGCMUN India",
+            date: "April, 2024",
+            image: "/certificates/igcmun.png",
+            link: "#"
         },
         {
             title: "Software Engineering",
             organization: "Coursera",
             date: "May, 2024",
-            image: "/software.png",
+            image: "/certificates/software.png",
             link: "https://drive.google.com/file/d/1ZfN3j95W6HuIFe-32fPnCe5gO4TO86hv/view?usp=drive_link"
+        },
+        {
+            title: "Legacy Responsive Web Design",
+            organization: "freeCodeCamp",
+            date: "Nov, 2023",
+            image: "/certificates/freecodecamp.png",
+            link: "https://drive.google.com/file/d/1gzbKZ9g_EtyI4aaEPS5neLMCUVvkL01d/view?usp=drive_link"
         }
     ],
     social: {
-        twitter: {
-            link: "https://twitter.com/ajaygangwar945",
-            title: "Latest Tweets",
-            content: "Sharing thoughts on the latest tech trends and my coding journey.",
-            action: "View on Twitter"
-        },
+
         github: {
             link: "https://github.com/ajaygangwar945",
             title: "GitHub Activity",
             content: "Active contributor and builder. Check out my latest repositories and code experiments.",
             action: "View Profile"
         },
+
         linkedin: {
             link: "https://www.linkedin.com/in/ajaygangwar945",
             title: "Professional Network",
             content: "Always open to collaborating on innovative projects and networking with peers.",
             action: "Connect with me"
-        },
-        instagram: {
-            link: "https://instagram.com/ajaygangwar.945",
-            title: "Behind the Scenes",
-            content: "Snippet of my life outside of coding—travel, events, and personal growth moments.",
-            action: "Check Gallery"
         },
         leetcode: {
             link: "https://leetcode.com/ajaygangwar945",
@@ -372,6 +639,24 @@ export const PORTFOLIO_DATA = {
             title: "Data Science Hub",
             content: "Diving deep into datasets and building machine learning models for real-world impact.",
             action: "View Notebooks"
+        },
+        codolio: {
+            link: "https://codolio.com/profile/ajaygangwar945",
+            title: "Coding Profile",
+            content: "Showcasing my multi-platform coding performance and algorithmic statistics.",
+            action: "View Stats"
+        },
+        twitter: {
+            link: "https://twitter.com/ajaygangwar945",
+            title: "Latest Tweets",
+            content: "Sharing thoughts on the latest tech trends and my coding journey.",
+            action: "View on Twitter"
+        },
+        instagram: {
+            link: "https://instagram.com/ajaygangwar.945",
+            title: "Behind the Scenes",
+            content: "Snippet of my life outside of coding—travel, events, and personal growth moments.",
+            action: "Check Gallery"
         },
         discord: {
             link: "https://discord.com/users/ajaygangwar945",
@@ -397,6 +682,28 @@ export const GeminiService = {
             return "VITE_GEMINI_API_KEY missing from .env";
         }
 
+        // Prepare context from PORTFOLIO_DATA to help AI answer accurately
+        const portfolioContext = {
+            personal: PORTFOLIO_DATA.personal,
+            skills: PORTFOLIO_DATA.skills,
+            projects: PORTFOLIO_DATA.projects.map(p => ({ 
+                title: p.title, 
+                description: p.description, 
+                tags: p.tags,
+                year: p.year
+            })),
+            achievements: PORTFOLIO_DATA.achievements,
+            education: PORTFOLIO_DATA.education,
+            experience: PORTFOLIO_DATA.experience,
+            positions: PORTFOLIO_DATA.positions.map(p => ({
+                title: p.title,
+                role: p.role,
+                description: p.description
+            }))
+        };
+
+        const contextString = JSON.stringify(portfolioContext);
+
         // 🔒 PRODUCTION: Netlify Proxy | 🛠️ DEVELOPMENT: Direct Google API
         // Switching to gemini-2.5-flash as it is the only one with active quota for this key.
         const url = isDev
@@ -404,17 +711,18 @@ export const GeminiService = {
             : `/.netlify/functions/gemini-proxy`;
 
         try {
-            const body = isDev 
+            const body = isDev
                 ? JSON.stringify({
                     contents: [{
                         parts: [{
                             text: `You are a helpful AI assistant for Ajay Gangwar's portfolio. 
-                            Keep your answers concise and professional. 
+                            Use the following data to answer user queries: ${contextString}
+                            Keep your answers concise and professional. If the data doesn't contain the answer, say so politely.
                             User Query: ${prompt}`
                         }]
                     }]
                 })
-                : JSON.stringify({ prompt });
+                : JSON.stringify({ prompt, context: contextString });
 
             const response = await fetch(url, {
                 method: 'POST',
@@ -425,11 +733,11 @@ export const GeminiService = {
             if (!response.ok) {
                 const errorData = await response.json().catch(() => ({}));
                 console.error("🤖 ChatBot Error:", response.status, errorData);
-                
+
                 if (response.status === 429) {
                     return "RATE_LIMIT_REACHED";
                 }
-                
+
                 return `ERROR_${response.status}: I'm having trouble connecting to my brain right now.`;
             }
 

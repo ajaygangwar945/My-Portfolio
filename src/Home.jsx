@@ -23,6 +23,7 @@ import { PORTFOLIO_DATA, GeminiService } from './data';
 import ProjectCard from './ProjectCard';
 import SectionTitle from './SectionTitle';
 import CertificateCard from './CertificateCard';
+// Lightbox is only used in AllCertificates
 
 /* =============================================================================
   🚀 COMPONENT LOGIC
@@ -211,13 +212,15 @@ const PositionTimelineItem = ({ position, isLast, isDark }) => (
             ? 'bg-slate-800/50 border-slate-700 hover:border-cyan-500/50'
             : 'bg-white border-slate-200 hover:border-cyan-500/50 shadow-sm'
             }`}>
-            <div className="flex flex-col md:flex-row justify-between md:items-center mb-2">
+            <div className="flex flex-col md:flex-row justify-between md:items-center gap-2 mb-2">
                 <h4 className={`text-xl font-bold ${isDark ? 'text-white' : 'text-slate-800'}`}>
                     {position.title}
                 </h4>
-                <span className={`text-sm font-medium px-3 py-1 rounded-full ${isDark ? 'bg-slate-700 text-cyan-300' : 'bg-cyan-50 text-cyan-700'}`}>
-                    {position.date}
-                </span>
+                <div className="flex items-center">
+                    <span className={`text-xs font-medium px-3 py-1 rounded-full ${isDark ? 'bg-slate-700 text-cyan-300' : 'bg-cyan-50 text-cyan-700'}`}>
+                        {position.date}
+                    </span>
+                </div>
             </div>
             <h5 className={`text-lg font-medium mb-3 ${isDark ? 'text-cyan-400' : 'text-cyan-600'}`}>
                 {position.role}
@@ -461,7 +464,7 @@ const Home = ({ isDark }) => {
                 <div className={`absolute top-20 right-0 w-96 h-96 rounded-full blur-3xl opacity-50 animate-pulse ${isDark ? 'bg-blue-600/20' : 'bg-blue-400/20'}`}></div>
                 <div className={`absolute bottom-0 left-0 w-72 h-72 rounded-full blur-3xl opacity-50 ${isDark ? 'bg-cyan-500/10' : 'bg-cyan-400/20'}`}></div>
 
-                <div className="container mx-auto px-6 relative z-10 text-center md:text-left pt-6 sm:pt-0">
+                <div className="container mx-auto px-6 relative z-10 text-center md:text-left pt-12 sm:pt-0">
                     <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
                         <div className="flex-1 space-y-6">
                             <div className={`inline-block px-3 py-1 border rounded-full text-sm font-medium mb-4 ${isDark
@@ -539,10 +542,10 @@ const Home = ({ isDark }) => {
                 <div className="container mx-auto px-6">
                     <SectionTitle title="About Me" subtitle="My journey and professional mission" isDark={isDark} />
 
-                    <div className="grid lg:grid-cols-2 gap-10 sm:gap-16 items-start max-w-6xl mx-auto">
+                    <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-start max-w-6xl mx-auto">
                         {/* Narrative Side */}
                         <div className="space-y-6 sm:space-y-8">
-                            <div className={`p-6 sm:p-8 rounded-2xl border-l-4 border-cyan-500 ${isDark ? 'bg-slate-800/40 text-slate-300' : 'bg-white text-slate-600 shadow-sm'}`}>
+                            <div className={`p-6 md:p-8 rounded-2xl border-l-4 border-cyan-500 ${isDark ? 'bg-slate-800/40 text-slate-300' : 'bg-white text-slate-600 shadow-sm'}`}>
                                 <h3 className={`text-2xl font-bold mb-6 ${isDark ? 'text-white' : 'text-slate-900'}`}>My Story</h3>
                                 <div className="space-y-4 text-lg leading-relaxed text-pretty">
                                     {PORTFOLIO_DATA.personal.fullBio?.map((paragraph, i) => (
@@ -669,10 +672,14 @@ const Home = ({ isDark }) => {
                 <div className="container mx-auto px-6">
                     <SectionTitle title="Certificates" subtitle="Professional certifications and achievements" isDark={isDark} />
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-                        {PORTFOLIO_DATA?.certificates && Array.isArray(PORTFOLIO_DATA.certificates) && PORTFOLIO_DATA.certificates.length > 0 ? (
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-screen-2xl mx-auto">
+                        {PORTFOLIO_DATA?.certificates && PORTFOLIO_DATA.certificates.length > 0 ? (
                             PORTFOLIO_DATA.certificates.slice(0, 6).map((certificate, index) => (
-                                <CertificateCard key={index} certificate={certificate} isDark={isDark} />
+                                <CertificateCard 
+                                    key={index} 
+                                    certificate={certificate} 
+                                    isDark={isDark} 
+                                />
                             ))
                         ) : (
                             <p className={`col-span-full text-center ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
