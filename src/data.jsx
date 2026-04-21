@@ -259,7 +259,7 @@ export const PORTFOLIO_DATA = {
             icon: <Cpu size={20} />
         },
         {
-            title: "2nd Rank - AI in Web Development (2024)",
+            title: "2nd Rank - AI in Web Development 2024",
             organization: "Competition",
             description: "Secured 2nd rank by developing an AI-driven language learning platform using Python",
             icon: <Code size={20} />
@@ -686,9 +686,9 @@ export const GeminiService = {
         const portfolioContext = {
             personal: PORTFOLIO_DATA.personal,
             skills: PORTFOLIO_DATA.skills,
-            projects: PORTFOLIO_DATA.projects.map(p => ({ 
-                title: p.title, 
-                description: p.description, 
+            projects: PORTFOLIO_DATA.projects.map(p => ({
+                title: p.title,
+                description: p.description,
                 tags: p.tags,
                 year: p.year
             })),
